@@ -102,7 +102,6 @@ platforms = {
     "Fiverr": "https://www.fiverr.com/{}",
     "Coursera": "https://www.coursera.org/user/{}",
     "Badoo": "https://badoo.com/profile/{}",
-    "Rumble": "https://rumble.com/user/{}",
     "Wix": "https://www.wix.com/website/{}",
     "GitHub": "https://github.com/{}"
 }
