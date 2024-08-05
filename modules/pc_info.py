@@ -65,10 +65,9 @@ class PCInfo:
         print(f"Adresse IPv4 : {ipv4}")
         print(f"Adresse IPv6 : {ipv6}")
         print(f"UUID du PC : {self.get_uuid()}")
-
-print(f"""
-[1] back to menu
-""")
+        print(f"""
+        [1] back to menu
+        """)
 
 choice = int(input('\033[0;35m Choose >> '))
 
