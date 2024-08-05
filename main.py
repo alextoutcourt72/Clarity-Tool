@@ -22,6 +22,9 @@ menu = """
 
                                                     Made by Alex
                                                     version 1.0.0
+                                                        [!]
+                                          Clarity ne vous demendera jamais 
+                                             vos informations perssonels.
 Select tool :
     ╔═══                                         ═══╗ 
     ║   [1] > Tool info       
