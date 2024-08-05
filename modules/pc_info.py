@@ -66,6 +66,14 @@ class PCInfo:
         print(f"Adresse IPv6 : {ipv6}")
         print(f"UUID du PC : {self.get_uuid()}")
 
-if __name__ == "__main__":
-    pc = PCInfo()
-    pc.display_info()
+print(f"""
+[1] back to menu
+""")
+
+choice = int(input('\033[0;35m Choose >> '))
+
+def execute_script(choice):
+    if choice == 1:
+        os.system('python main.py')
+
+execute_script(choice)
