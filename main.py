@@ -50,6 +50,6 @@ def execute_script(choice):
     elif choice == 7:
         os.system('python ./modules/discord_token_info.py')
     elif choice == 8:
-        os.system('python ./modules/username-tracker.py')
+        os.system('python ./modules/username_tracker.py')
 
 execute_script(choice)
