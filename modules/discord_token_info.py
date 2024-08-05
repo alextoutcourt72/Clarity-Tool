@@ -47,6 +47,7 @@ def main():
         print(f"Error: {user_info['error']} (Status code: {user_info['status_code']})")
         if user_info['status_code'] == 401:
             print("Invalid token. Please check your token and try again.")
+        return end()
     else:
         print("Token is valid.")
         print(f"Email: {user_info['email']}")
@@ -60,17 +61,18 @@ def main():
             print(f"Error: {nitro_status['error']} (Status code: {nitro_status['status_code']})")
         else:
             print(f"Nitro Status: {nitro_status}")
-        print(f"""
-        [1] back to menu
-        """)
+def end():
+            print(f"""
+            [1] back to menu
+            """)
 
-        choice = int(input('\033[0;35m Choose >> '))
+            choice = int(input('\033[0;35m Choose >> '))
 
-        def execute_script(choice):
-            if choice == 1:
-                os.system('python main.py')
+            def execute_script(choice):
+                if choice == 1:
+                    os.system('python main.py')
 
-        execute_script(choice)
+            execute_script(choice)
 
 def get_nitro_status(token):
     url = "https://discord.com/api/v9/users/@me/billing/subscriptions"
