@@ -6,11 +6,12 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 
 ## Features
 
-- [x]  - OSINT
-- [ ]  - Discord tools
-- [x]  - Whois lookup
-- [X]  - Ip lookup
-- [ ]  - Web page copier
+- [x]   OSINT
+- [ ]   Discord tools
+- [x]   Whois lookup
+- [X]   Ip lookup
+- [ ]   Web page copier
+- [ ]  ClarityAI
 
 
 
