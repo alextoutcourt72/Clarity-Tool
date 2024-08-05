@@ -23,7 +23,7 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 To deploy this project run
 
 ```bash
-  pip install -r requierements.txt
+  pip install -r requirements.txt
 ```
 
 for run
