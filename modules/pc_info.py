@@ -24,7 +24,7 @@ print(f"""
 
 class PCInfo:
     def __init__(self):
-        self.IP = input("Entrez l'adresse IP de votre cible : ")
+        self.IP = input("Entrez l'adresse IP de votre cible >>> ")
         while not self.validate_ip(self.IP):
             print("Adresse IP invalide. Veuillez réessayer.")
             self.IP = input("Entrez l'adresse IP de votre cible : ")
@@ -68,7 +68,7 @@ class PCInfo:
         print(f"""
         [1] back to menu
         """)
-        choice = int(input('\033[0;35m Choose >> '))
+        choice = int(input('\033[0;35m Choose >>> '))
         def execute_script(choice):
             if choice == 1:
                 os.system('python main.py')
