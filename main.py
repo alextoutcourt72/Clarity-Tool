@@ -32,14 +32,14 @@ choice = int(input('Choose >> '))
 
 def execute_script(choice):
     if choice == 1:
-        os.system('python tool_info.py')
+        os.system('python ./modules/tool_info.py')
     elif choice == 2:
-        os.system('python ip_lookup.py')
+        os.system('python ./modules/ip_lookup.py')
     elif choice == 3:
-        os.system('python whois_lookup.py')
+        os.system('python ./modules/whois_lookup.py')
     elif choice == 4:
-        os.system('python osint_tool.py')
+        os.system('python ./modules/osint_tool.py')
     elif choice == 5:
-        os.system('python webcopier_tool.py')
+        os.system('python ./modules/webcopier_tool.py')
 
 execute_script(choice)
