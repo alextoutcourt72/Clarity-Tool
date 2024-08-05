@@ -49,5 +49,7 @@ def execute_script(choice):
         os.system('python ./modules/PC_info.py')
     elif choice == 7:
         os.system('python ./modules/discord_token_info.py')
+    elif choice == 8:
+        os.system('python ./modules/username-tracker.py')
 
 execute_script(choice)
