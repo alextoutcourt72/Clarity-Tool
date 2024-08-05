@@ -2,3 +2,4 @@ requests
 webbrowser
 whois
 pywebcopy
+pystyle

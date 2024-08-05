@@ -8,7 +8,7 @@ os.system('color D')
 os.system('cls')
 
 
-menu = f"""
+menu = """
              ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
             ▒██▀ ▀█  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    
             ▒▓█    ▄ ▒██░   ▒██  ▀█▄  ▓██ ░▄█ ▒▒██▒▒ ▓██░ ▒░  ▒██ ██░   ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░    
@@ -27,7 +27,7 @@ Select tool :
         [1] Tool info       [6] PC info
         [2] Ip lookup       [7] Discord Token Info
         [3] Whois lookup    [8] Username Tracker
-        [4] OSINT           
+        [4] OSINT           [9] discord server info    
         [5] Web page saver (not work)
 """
 print(menu)
@@ -51,5 +51,7 @@ def execute_script(choice):
         os.system('python ./modules/discord_token_info.py')
     elif choice == 8:
         os.system('python ./modules/username_tracker.py')
+    elif choice == 9:
+        os.system('python ./modules/discord_server_info.py')
 
 execute_script(choice)
