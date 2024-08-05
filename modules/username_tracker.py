@@ -1,7 +1,5 @@
 import os
 import requests
-from bs4 import BeautifulSoup4
-import re
 
 os.system('color D')
 os.system("cls")
