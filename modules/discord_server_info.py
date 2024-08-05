@@ -1,7 +1,9 @@
 import requests
 import os
 
+os.system('cls' if os.name == 'nt' else 'clear')
 os.system("color d")
+
 
 print(f"""
   ██████ ▓█████  ██▀███   ██▒   █▓▓█████  ██▀███      ██▓ ███▄    █   █████▒▒█████  
@@ -32,9 +34,7 @@ def print_header(header):
 
 
 def server_lookup():
-    clear()
     invitelink = input(f"Insert end part of link of discord server link: ").strip()
-    clear()
 
     try:
         if "discord.gg" in invitelink:
@@ -73,12 +73,10 @@ def server_lookup():
 
 
 def main():
-    clear()
 
     while True:
         server_lookup()
         return end()
-        clear()
 
 def end():
     print(f"""
