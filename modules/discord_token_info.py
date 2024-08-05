@@ -38,28 +38,6 @@ def get_user_info(token):
     else:
         return {"error": "Unable to fetch user info", "status_code": response.status_code}
 
-def get_nitro_status(token):
-    url = "https://discord.com/api/v9/users/@me/billing/subscriptions"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "application/json"
-    }
-
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        subscriptions = response.json()
-        if len(subscriptions) == 0:
-            return "No Nitro subscription"
-        else:
-            for subscription in subscriptions:
-                if subscription['type'] == 1:
-                    return "Nitro Classic"
-                elif subscription['type'] == 2:
-                    return "Nitro"
-    else:
-        return {"error": "Unable to fetch Nitro status", "status_code": response.status_code}
-
 def main():
     token = input("Please enter your Discord token: ")
     
@@ -82,6 +60,28 @@ def main():
             print(f"Error: {nitro_status['error']} (Status code: {nitro_status['status_code']})")
         else:
             print(f"Nitro Status: {nitro_status}")
+
+def get_nitro_status(token):
+    url = "https://discord.com/api/v9/users/@me/billing/subscriptions"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        subscriptions = response.json()
+        if len(subscriptions) == 0:
+            return "No Nitro subscription"
+        else:
+            for subscription in subscriptions:
+                if subscription['type'] == 1:
+                    return "Nitro Classic"
+                elif subscription['type'] == 2:
+                    return "Nitro"
+    else:
+        return {"error": "Unable to fetch Nitro status", "status_code": response.status_code}
 
 print(f"""
 [1] back to menu
