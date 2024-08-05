@@ -1,3 +1,5 @@
+import os
+
 import requests
 
 os.system('color D')
