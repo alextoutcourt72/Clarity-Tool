@@ -20,7 +20,7 @@ menu = f"""
                                                     version 1.0.0
 Select tool :
 
-        [1] Tool info       [6] soon    [11] soon
+        [1] Tool info       [6] PC info    [11] soon
         [2] Ip lookup       [7] soon    [12] soon
         [3] Whois lookup    [8] soon    [13] soon
         [4] OSINT           [9] soon
@@ -41,5 +41,7 @@ def execute_script(choice):
         os.system('python ./modules/osint_tool.py')
     elif choice == 5:
         os.system('python ./modules/webcopier_tool.py')
+    elif choice == 6:
+        os.system('python ./modules/PC_info.py')
 
 execute_script(choice)
