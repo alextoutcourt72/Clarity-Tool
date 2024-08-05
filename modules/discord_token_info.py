@@ -60,6 +60,17 @@ def main():
             print(f"Error: {nitro_status['error']} (Status code: {nitro_status['status_code']})")
         else:
             print(f"Nitro Status: {nitro_status}")
+        print(f"""
+        [1] back to menu
+        """)
+
+        choice = int(input('\033[0;35m Choose >> '))
+
+        def execute_script(choice):
+            if choice == 1:
+                os.system('python main.py')
+
+        execute_script(choice)
 
 def get_nitro_status(token):
     url = "https://discord.com/api/v9/users/@me/billing/subscriptions"
@@ -82,17 +93,6 @@ def get_nitro_status(token):
                     return "Nitro"
     else:
         return {"error": "Unable to fetch Nitro status", "status_code": response.status_code}
-
-print(f"""
-[1] back to menu
-""")
-
-choice = int(input('\033[0;35m Choose >> '))
-
-def execute_script(choice):
-      if choice == 1:
-          os.system('python main.py')
-execute_script(choice)
 
 if __name__ == "__main__":
     main()
