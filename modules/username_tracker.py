@@ -115,7 +115,7 @@ def check_username(platform, url):
             return platform, url, True
     except requests.RequestException as e:
         print(f"Erreur lors de la vérification de {platform}: {e}")
-    return platform, url, False
+    return platform, url, username
 
 def track_username(username):
     results = {}
