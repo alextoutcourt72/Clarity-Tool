@@ -3,6 +3,8 @@
 
 Clarity is a multi tool for OSINT ip lookup web poage copier and more
 
+[!] Clarity ne vous demendera jamais vos informations perssonels
+
 
 ## Features
 
