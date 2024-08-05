@@ -57,7 +57,7 @@ class PCInfo:
             uuid_str = subprocess.check_output('cat /proc/sys/kernel/random/uuid', shell=True).decode().strip()
         return uuid_str
 
-def display_info(self):
+    def display_info(self):
         print(f"Nom d'utilisateur : {self.get_username()}")
         print(f"Nom du PC : {self.get_pc_name()}")
         print(f"Adresse MAC : {self.get_mac_address()}")
@@ -65,3 +65,19 @@ def display_info(self):
         print(f"Adresse IPv4 : {ipv4}")
         print(f"Adresse IPv6 : {ipv6}")
         print(f"UUID du PC : {self.get_uuid()}")
+        print(f"""
+        [1] back to menu
+        """)
+        choice = int(input('\033[0;35m Choose >> '))
+        def execute_script(choice):
+            if choice == 1:
+                os.system('python main.py')
+            elif choice == 2:
+                os.system('python whois_lookup.py')
+
+        execute_script(choice)
+
+
+if __name__ == "__main__":
+    pc = PCInfo()
+    pc.display_info()
