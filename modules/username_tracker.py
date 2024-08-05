@@ -1,5 +1,6 @@
 import os
 import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 os.system('color D')
 os.system("cls")
@@ -112,35 +113,39 @@ def check_username(platform, url):
         response = requests.get(url)
         if response.status_code == 200:
             if "404" in response.text or "not found" in response.text.lower():
-                return False
-            return True
+                return platform, url, False
+            return platform, url, True
     except requests.RequestException as e:
         print(f"Erreur lors de la vérification de {platform}: {e}")
-    return False
+    return platform, url, False
 
 def track_username(username):
     results = {}
-    for platform, url_template in platforms.items():
-        # Gérer les cas particuliers pour le format des URL
-        if "{}" in url_template:
-            url = url_template.format(username)
-        else:
-            url = url_template.format(username.lower())
-        
-        exists = check_username(platform, url)
-        if exists:
-            results[platform] = url
+    with ThreadPoolExecutor(max_workers=15) as executor:
+        future_to_platform = {
+            executor.submit(check_username, platform, url_template.format(username) if "{}" in url_template else url_template.format(username.lower())): platform
+            for platform, url_template in platforms.items()
+        }
+        for future in as_completed(future_to_platform):
+            platform = future_to_platform[future]
+            try:
+                p, url, exists = future.result()
+                if exists:
+                    results[p] = url
+            except Exception as e:
+                print(f"Erreur lors de la récupération des résultats pour {platform}: {e}")
+
     return results
 
 if __name__ == "__main__":
-    username = input("Entrez le nom d'utilisateur ciblé : ")
+    username = input("Entrez le nom d'utilisateur à suivre: ")
     results = track_username(username)
     if results:
         for platform, url in results.items():
             print(f"{username} est présent sur {platform} : {url}")
     else:
         print(f"{username} n'est présent sur aucun des sites spécifiés.")
-
+               
 def end():
             print(f"""
             [1] back to menu
