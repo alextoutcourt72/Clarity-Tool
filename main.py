@@ -1,4 +1,8 @@
 import os
+from os import system
+
+title="Clarity tool \ made by alex \ v1.0.0"
+system("title "+title)
 
 os.system('color D')
 os.system('cls')
