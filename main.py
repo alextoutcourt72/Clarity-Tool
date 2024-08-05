@@ -26,7 +26,7 @@ Select tool :
 
         [1] Tool info       [6] PC info
         [2] Ip lookup       [7] Discord Token Info
-        [3] Whois lookup    
+        [3] Whois lookup    [8] Username Tracker
         [4] OSINT           
         [5] Web page saver (not work)
 """
