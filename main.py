@@ -24,14 +24,14 @@ menu = """
                                                     version 1.0.0
 Select tool :
     ╔═══                                         ═══╗ 
-    ║   [1] Tool info       
-        [2] Ip lookup                                   
-        [3] Whois lookup                                
-        [4] OSINT                                       
-        [5] Web page saver                              
-        [6] PC Info                                     
-        [7] Discord token info                          
-        [8] Username Tracker                            
+    ║   [1] > Tool info       
+        [2] > Ip lookup                                   
+        [3] > Whois lookup                                
+        [4] > OSINT                                       
+        [5] > Web page saver                              
+        [6] > PC Info                                     
+        [7] > Discord token info                          
+        [8] > Username Tracker                            
     ║   [9] N/A                                         
     ╚═══                                         ═══╝   
 """
