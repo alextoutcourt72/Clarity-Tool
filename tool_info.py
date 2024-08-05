@@ -21,7 +21,7 @@ print(f"""
 print(f"""
 
     Author: {author}     
-    Version: {version}    
+    Version: {version}
 
 
 [1] Back to main menu

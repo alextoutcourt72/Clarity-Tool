@@ -14,16 +14,20 @@ print(f"""
              ▒ ░░▒ ░        ░ ░ ▒  ░  ░ ▒ ▒░   ░ ▒ ▒░ ░ ░▒ ▒░░░▒░ ░ ░ ░▒ ░     
              ▒ ░░░            ░ ░   ░ ░ ░ ▒  ░ ░ ░ ▒  ░ ░░ ░  ░░░ ░ ░ ░░       
              ░                  ░  ░    ░ ░      ░ ░  ░  ░      ░              
-                                                                   
+                                                                                
 """)
 
-Iprequest = input("Adresse IP Cible >>> ")
 
-Ip = int(Iprequest)
+print('\033[31m' + f"""
+[!] Avertissement
+Retenez que l'adresse obtenu (ex la ville) ce n'est pas l'adresse exacte de la perssone
+c'est l'adresse du relai de la box.
+""")
+
+Iprequest = input("\033[0;35m Adresse IP Cible >>> ")
 
 def ip_lookup(ip):
     try:
-        # Remplacer 'YOUR_ACCESS_KEY' par votre clé API si nécessaire
         url = f'https://ipapi.co/{ip}/json/'
         response = requests.get(url)
         if response.status_code == 200:
@@ -35,7 +39,7 @@ def ip_lookup(ip):
                 'country': data.get('country_name'),
                 'latitude': data.get('latitude'),
                 'longitude': data.get('longitude'),
-                'isp': data.get('org')
+                'fai': data.get('org')
             }
         else:
             return {'error': 'Impossible de récupérer les informations.'}
@@ -44,3 +48,17 @@ def ip_lookup(ip):
 
 ip_info = ip_lookup(Iprequest)
 print(ip_info)
+print(f"""
+[1] Back to menu
+[2] ip lookup
+""")
+
+choice = int(input('\033[0;35m Choose >> '))
+
+def execute_script(choice):
+    if choice == 1:
+        os.system('python main.py')
+    elif choice == 2:
+        os.system('python ip_lookup.py')
+
+execute_script(choice)
