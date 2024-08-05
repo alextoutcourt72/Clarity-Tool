@@ -12,4 +12,4 @@ def PCInfo(self):
         dict = requests.get("http://ip-api.com/json/?fields=225545").json()
 
     except:
-        PC_Info = "Failed to get PC Info"
+        pcinfo = "Failed to get PC Info"
