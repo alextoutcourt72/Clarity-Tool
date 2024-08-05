@@ -9,7 +9,7 @@ def PCInfo(self):
     computer_name = os.getenv("ComputerName")
 
     try:
-        dict = requests.get("http://ip-api.com/json/?fields=225545")
+        dict = requests.get("http://ip-api.com/json/?fields=225545").json()
 
     except:
         PC_Info = "Failed to get PC Info"
