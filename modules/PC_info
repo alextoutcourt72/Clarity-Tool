@@ -1,1 +1,15 @@
+import sys
+import os
+import requests
 
+class PC_Info:
+
+def PCInfo(self):
+    username = os.getenv("Username")
+    computer_name = os.getenv("ComputerName")
+
+    try:
+        dict = requests.get("http://ip-api.com/json/?fields=225545")
+
+    except:
+        PC_Info = "Failed to get PC Info"
