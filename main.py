@@ -34,7 +34,7 @@ menu = """
                                ║                                                   ║                              
         ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗ 
         ║   [1] > Tool info                             ║ ║   [10] > Discord server info                  ║
-        ║   [2] > Ip lookup                             ║ ║   [11] >                                      ║
+        ║   [2] > Ip tools                              ║ ║   [11] >                                      ║
         ║   [3] > Whois lookup                          ║ ║   [12] >                                      ║
         ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
         ║   [5] > Check Phone Number                    ║ ║   [14] >                                      ║
