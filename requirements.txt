@@ -7,3 +7,4 @@ socket
 subprocess
 uuid 
 platform 
+phonenumbers geopy
