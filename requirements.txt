@@ -2,3 +2,8 @@ requests
 webbrowser
 whois
 pywebcopy
+re
+socket 
+subprocess
+uuid 
+platform 
