@@ -1,11 +1,15 @@
 import os
 from os import system
+import colorama
+from colorama import init, Fore
+
+colorama.init()
 
 title="Clarity tool \ made by alex \ v1.0.0"
 system("title "+title)
 
 os.system('color D')
-os.system('cls')
+os.system('cls' if os.name == 'nt' else 'clear')
 
 
 menu = """
@@ -21,7 +25,7 @@ menu = """
             ░                                                ░ ░                                           
 
                                                     Made by Alex
-                                                    version 1.0.0
+                                                    version 1.0
                                                         [!]
                                           Clarity ne vous demendera jamais 
                                              vos informations perssonels.
@@ -35,7 +39,7 @@ Select tool :
         [6] > PC Info                                     
         [7] > Discord token info                          
         [8] > Username Tracker                            
-    ║   [9] N/A                                         
+    ║   [9] > IP Port scanner                                         
     ╚═══                                         ═══╝   
 """
 print(menu)

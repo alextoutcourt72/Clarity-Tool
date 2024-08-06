@@ -2,7 +2,7 @@ import os
 
 from pywebcopy import save_website
 
-os.system("cls")
+os.system('cls' if os.name == 'nt' else 'clear')
 os.system("color d")
 
 print(f"""
