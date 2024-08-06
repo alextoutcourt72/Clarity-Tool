@@ -13,6 +13,7 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 - [x] Whois lookup
 - [X] Ip lookup
 - [ ] Ip port scanner
+- [x] Phone number info
 - [ ] Web page copier
 - [ ] ClarityAI
 - [x] Username tracker
