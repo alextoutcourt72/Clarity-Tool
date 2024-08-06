@@ -30,7 +30,7 @@ Select tool :
     ║   [1] > Tool info       
         [2] > Ip lookup                                   
         [3] > Whois lookup                                
-        [4] > OSINT                                       
+        [4] > OSINT Framework (website)                                       
         [5] > Web page saver                              
         [6] > PC Info                                     
         [7] > Discord token info                          
