@@ -1,10 +1,7 @@
-requests
-webbrowser
-whois
-pywebcopy
-re
-socket 
-subprocess
-uuid 
-platform 
-phonenumbers geopy
+requests~=2.32.3
+whois~=1.20240129.2
+pywebcopy~=7.0.2
+uuid~=1.30
+
+phonenumbers~=8.13.42
+geopy~=2.4.1

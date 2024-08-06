@@ -1,9 +1,5 @@
 import os
 from os import system
-import colorama
-from colorama import init, Fore
-
-colorama.init()
 
 title="Clarity tool \ made by alex \ v1.0.0"
 system("title "+title)
@@ -35,7 +31,7 @@ Select tool :
         [2] > Ip lookup                                   
         [3] > Whois lookup                                
         [4] > OSINT Framework (website)                                       
-        [5] > Web page saver                              
+        [5] > Check Phone Number                              
         [6] > PC Info                                     
         [7] > Discord token info                          
         [8] > Username Tracker                            
@@ -56,7 +52,7 @@ def execute_script(choice):
     elif choice == 4:
         os.system('python ./modules/osint_tool.py')
     elif choice == 5:
-        os.system('python main.py')
+        os.system('python ./modules/number_info.py')
     elif choice == 6:
         os.system('python ./modules/PC_info.py')
     elif choice == 7:
