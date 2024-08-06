@@ -35,5 +35,7 @@ for run
 ```bash
   python main.py
 ```
+## Important
+Je ne suis pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
 
 
