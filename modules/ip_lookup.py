@@ -17,7 +17,6 @@ print(f"""
                                                                                 
 """)
 
-
 print('\033[31m' + f"""
 [!] Avertissement
 Retenez que l'adresse obtenu (ex la ville) ce n'est pas l'adresse exacte de la perssone
@@ -25,6 +24,7 @@ c'est l'adresse du relai de la box.
 """)
 
 Iprequest = input("\033[0;35m Adresse IP Cible >>> ")
+
 
 def ip_lookup(ip):
     try:
@@ -46,6 +46,7 @@ def ip_lookup(ip):
     except Exception as e:
         return {'error': str(e)}
 
+
 ip_info = ip_lookup(Iprequest)
 print(ip_info)
 print(f"""
@@ -55,10 +56,12 @@ print(f"""
 
 choice = int(input('\033[0;35m Choose >> '))
 
+
 def execute_script(choice):
     if choice == 1:
         os.system('python main.py')
     elif choice == 2:
         os.system('python ip_lookup.py')
+
 
 execute_script(choice)

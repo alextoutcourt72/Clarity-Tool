@@ -20,6 +20,7 @@ print(f"""
 
 url = input("Enter the webpage url >> ")
 
+
 save_website(
     url=url,
     project_folder="./savedpages",
