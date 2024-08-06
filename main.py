@@ -22,21 +22,28 @@ menu = """
 
                                                     Made by Alex
                                                     version 1.0
-                                                        [!]
-                                          Clarity ne vous demendera jamais 
-                                             vos informations perssonels.
-Select tool :
-    ╔═══                                         ═══╗ 
-    ║   [1] > Tool info       
-        [2] > Ip lookup                                   
-        [3] > Whois lookup                                
-        [4] > OSINT Framework (website)                                       
-        [5] > Check Phone Number                              
-        [6] > PC Info                                     
-        [7] > Discord token info                          
-        [8] > Username Tracker                            
-    ║   [9] > IP Port scanner                                         
-    ╚═══                                         ═══╝   
+                                                          ╦
+                                                          ║
+                                        ╔═════════════════╩════════════════╗
+                                        ║               [!]                ║
+                                        ║ Clarity ne vous demendera jamais ║
+                                        ║    vos informations perssonels.  ║
+                                        ╚═════════════════╦════════════════╝
+                                                          ║
+                               ╔══════════════════════════╩════════════════════════╗
+                               ║                                                   ║                              
+        ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗ 
+        ║   [1] > Tool info                             ║ ║   [10] > Discord server info                  ║
+        ║   [2] > Ip lookup                             ║ ║   [11] >                                      ║
+        ║   [3] > Whois lookup                          ║ ║   [12] >                                      ║
+        ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
+        ║   [5] > Check Phone Number                    ║ ║   [14] >                                      ║
+        ║   [6] > PC Info                               ║ ║   [15] >                                      ║
+        ║   [7] > Discord token info                    ║ ║   [16] >                                      ║ 
+        ║   [8] > Username Tracker                      ║ ║   [17] >                                      ║ 
+        ║   [9] > Linkvertise Bypasser                  ║ ║   [18] >                                      ║          
+        ╚═══════════════════════════════════════════════╝ ╚═══════════════════════════════════════════════╝  
+        
 """
 print(menu)
 
@@ -60,6 +67,8 @@ def execute_script(choice):
     elif choice == 8:
         os.system('python ./modules/username_tracker.py')
     elif choice == 9:
-        os.system('python ./modules/discord_server_info.py')
+        os.system('python ./modules/linkvertise_bypasser.py')
+    elif choice == 10:
+        os.system('python ./modukes/discord_server_info.py')
 
 execute_script(choice)
