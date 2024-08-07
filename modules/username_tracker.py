@@ -153,6 +153,6 @@ def end():
 
             def execute_script(choice):
                 if choice == 1:
-                    os.system('python main.py')
+                    os.system('python ./main.py')
 
             execute_script(choice)
