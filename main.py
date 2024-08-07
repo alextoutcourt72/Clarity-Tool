@@ -35,7 +35,7 @@ menu = """
         ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗ 
         ║   [1] > Tool info                             ║ ║   [10] > Discord server info                  ║
         ║   [2] > Ip tools                              ║ ║   [11] > ClarityAI (beta)                     ║
-        ║   [3] > Whois lookup                          ║ ║   [12] >                                      ║
+        ║   [3] > N/A                                   ║ ║   [12] >                                      ║
         ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
         ║   [5] > Check Phone Number                    ║ ║   [14] >                                      ║
         ║   [6] > PC Info                               ║ ║   [15] >                                      ║
@@ -54,7 +54,7 @@ def execute_script(choice):
     elif choice == 2:
         os.system('python ./modules/ip_lookup.py')
     elif choice == 3:
-        os.system('python ./modules/whois_lookup.py')
+        os.system('python ./main.py')
     elif choice == 4:
         os.system('python ./modules/osint_tool.py')
     elif choice == 5:
