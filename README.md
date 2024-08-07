@@ -5,6 +5,7 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 
 [!] Clarity ne vous demendera jamais vos informations perssonels
 
+[>] Join Official discord server > https://discord.gg/qFJ7dNZ5Sf
 
 ## Features
 
