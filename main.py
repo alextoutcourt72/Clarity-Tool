@@ -34,7 +34,7 @@ menu = """
                                ║                                                   ║                              
         ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗ 
         ║   [1] > Tool info                             ║ ║   [10] > Discord server info                  ║
-        ║   [2] > Ip tools                              ║ ║   [11] >                                      ║
+        ║   [2] > Ip tools                              ║ ║   [11] > ClarityAI (beta)                     ║
         ║   [3] > Whois lookup                          ║ ║   [12] >                                      ║
         ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
         ║   [5] > Check Phone Number                    ║ ║   [14] >                                      ║
@@ -68,6 +68,6 @@ def execute_script(choice):
     elif choice == 9:
         os.system('python ./modules/linkvertise_bypasser.py')
     elif choice == 10:
-        os.system('python ./modukes/discord_server_info.py')
+        os.system('python ./modules/discord_server_info.py')
 
 execute_script(choice)
