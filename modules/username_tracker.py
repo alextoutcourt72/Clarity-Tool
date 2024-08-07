@@ -1,5 +1,6 @@
 import os
 import requests
+from bs4 import BeatifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 os.system('color D')
@@ -108,20 +109,24 @@ platforms = {
 
 def check_username(platform, url):
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
         if response.status_code == 200:
-            if "404" in response.text or "not found" in response.text.lower():
+            soup = BeautifulSoup(response.text, 'html.parser')
+            title_text = soup.title.string.lower() if soup.title else ""
+            if "not found" in title_text or "page not found" in title_text or "404" in title_text:
                 return platform, url, False
             return platform, url, True
+        elif response.status_code == 404:
+            return platform, url, False
     except requests.RequestException as e:
         print(f"Erreur lors de la vérification de {platform}: {e}")
-    return platform, url, username
+    return platform, url, False
 
 def track_username(username):
     results = {}
     with ThreadPoolExecutor(max_workers=15) as executor:
         future_to_platform = {
-            executor.submit(check_username, platform, url_template.format(username) if "{}" in url_template else url_template.format(username.lower())): platform
+            executor.submit(check_username, platform, url_template.format(username)): platform
             for platform, url_template in platforms.items()
         }
         for future in as_completed(future_to_platform):
@@ -135,7 +140,7 @@ def track_username(username):
 
     return results
 
-if __name__ == "__main__":
+def main():
     username = input("Entrez le nom d'utilisateur à suivre: ")
     results = track_username(username)
     if results:
@@ -143,16 +148,24 @@ if __name__ == "__main__":
             print(f"{username} est présent sur {platform} : {url}")
     else:
         print(f"{username} n'est présent sur aucun des sites spécifiés.")
-               
+
+    end()
+
 def end():
-            print(f"""
-            [1] back to menu
-            """)
+    print(f"""
+    [1] Retour au menu
+    """)
 
-            choice = int(input('\033[0;35m Choose >> '))
+    choice = int(input('\033[0;35m Choisissez >> '))
 
-            def execute_script(choice):
-                if choice == 1:
+    def execute_script(choice):
+        if choice == 1:
+            os.system('python main.py')
+
+    execute_script(choice)
+
+if __name__ == "__main__":
+    main()
                     os.system('python main.py')
 
             execute_script(choice)
