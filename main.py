@@ -1,12 +1,11 @@
 import os
 from os import system
+from pystyle import Colors, Colorate, Center
 
-title="Clarity tool \ made by alex \ v1.0.0"
+title="Clarity tool \ made by alex \ v1.0"
 system("title "+title)
 
-os.system('color D')
 os.system('cls' if os.name == 'nt' else 'clear')
-
 
 menu = """
              ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
@@ -20,20 +19,15 @@ menu = """
             ░ ░          ░  ░     ░  ░   ░      ░            ░ ░                     ░ ░      ░ ░      ░  ░
             ░                                                ░ ░                                           
 
-                                                    Made by Alex
-                                                    version 1.0
-                                                          ╦
-                                                          ║
-                                        ╔═════════════════╩════════════════╗
-                                        ║               [!]                ║
-                                        ║ Clarity ne vous demendera jamais ║
-                                        ║    vos informations perssonels.  ║
-                                        ╚═════════════════╦════════════════╝
-                                                          ║
-                               ╔══════════════════════════╩════════════════════════╗
-                               ║                                                   ║                              
-        ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗ 
-        ║   [1] > Tool info                             ║ ║   [10] > Discord server info                  ║
+                                                Made with <3 By Alex            ╔═════════════════════════════════════╗                 
+                                                    version 1.0                 ║                [!]                  ║
+                                                          ╦                     ║     clarity ne vous demendera       ║
+                                                          ║                     ║ jamais vos ainformations perssonels.║
+                                                          ║                     ╚════════════════╦════════════════════╝
+                               ╔══════════════════════════╩════════════════════════╗             ║ 
+                               ║                                                   ║             ║                 
+        ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩═════════════╩════════╗
+        ║   [1] > Tool info                             ║ ║   [10] > Linkvertise bypasser                 ║
         ║   [2] > Ip tools                              ║ ║   [11] > ClarityAI (beta)                     ║
         ║   [3] > N/A                                   ║ ║   [12] >                                      ║
         ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
@@ -41,16 +35,16 @@ menu = """
         ║   [6] > PC Info                               ║ ║   [15] >                                      ║
         ║   [7] > Discord token info                    ║ ║   [16] >                                      ║ 
         ║   [8] > Username Tracker                      ║ ║   [17] >                                      ║ 
-        ║   [9] > Linkvertise Bypasser                  ║ ║   [18] >                                      ║          
+        ║   [9] > Discord server info                   ║ ║   [18] >                                      ║          
         ╚═══════════════════════════════════════════════╝ ╚═══════════════════════════════════════════════╝        
 """
-print(menu)
+print(Colorate.Horizontal(Colors.blue_to_purple, menu))
 
-choice = int(input('Choose >> '))
+choice = int(input(Colorate.Horizontal(Colors.blue_to_purple,'Choose >> ')))
 
 def execute_script(choice):
     if choice == 1:
-        os.system('python ./modules/tool_info.py')
+        os.system('python ./modules/tools_info.py')
     elif choice == 2:
         os.system('python ./modules/ip_lookup.py')
     elif choice == 3:
@@ -66,8 +60,6 @@ def execute_script(choice):
     elif choice == 8:
         os.system('python ./modules/username_tracker.py')
     elif choice == 9:
-        os.system('python ./modules/linkvertise_bypasser.py')
-    elif choice == 10:
         os.system('python ./modules/discord_server_info.py')
 
 execute_script(choice)

@@ -1,11 +1,12 @@
 import requests
 import os
+from pystyle import Colors, Colorate, Center
 
 os.system('cls' if os.name == 'nt' else 'clear')
 os.system("color d")
 
 
-print(f"""
+print(Colorate.Horizontal(Colors.blue_to_purple,"""
   ██████ ▓█████  ██▀███   ██▒   █▓▓█████  ██▀███      ██▓ ███▄    █   █████▒▒█████  
 ▒██    ▒ ▓█   ▀ ▓██ ▒ ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒   ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
 ░ ▓██▄   ▒███   ▓██ ░▄█ ▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒   ▒██▒▓██  ▀█ ██▒▒████ ░▒██░  ██▒
@@ -16,7 +17,7 @@ print(f"""
 ░  ░  ░     ░     ░░   ░      ░░     ░     ░░   ░     ▒ ░   ░   ░ ░  ░ ░   ░ ░ ░ ▒  
       ░     ░  ░   ░           ░     ░  ░   ░         ░           ░            ░ ░  
                               ░                                                     
-""")
+"""))
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -34,7 +35,7 @@ def print_header(header):
 
 
 def server_lookup():
-    invitelink = input(f"Insert end part of link of discord server link: ").strip()
+    invitelink = input(Colorate.Horizontal(Colors.blue_to_purple,f"Insert end part of link of discord server link: ")).strip()
 
     try:
         if "discord.gg" in invitelink:
@@ -79,11 +80,11 @@ def main():
         return end()
 
 def end():
-    print(f"""
+    print(Colorate.Horizontal(Colors.blue_to_purple,f"""
     [1] Back to menu
-    """)
+    """))
 
-    choice = int(input('\033[0;35m Choose >> '))
+    choice = int(input(Colorate.Horizontal(Colors.blue_to_purple,'\033[0;35m Choose >> ')))
 
     def execute_script(choice):
         if choice == 1:

@@ -26,21 +26,4 @@ print(f"""
       ░░ ░                                                                         
 """)
 
-link = input("Enter link >>> ")
 
-url = "https://api.bypass.vip/bypass?url={link}"
-
-payload = {}
-headers = {
-"Host": "bypass.vip",
-"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
-"Accept": "*/*",
-"Accept-Language": "en-US,en;q=0.5",
-"Accept-Encoding": "gzip, deflate, br",
-"Referer": "https://bypass.vip",
-"Connection": "keep-alive",
-}
-
-response = requests.request()
-
-print(response.text)

@@ -2,11 +2,12 @@ import os
 import phonenumbers
 from phonenumbers import geocoder, carrier
 from geopy.geocoders import Nominatim
+from pystyle import Colors, Colorate, Center
 
 os.system('color D')
 os.system("cls")
 
-print(f"""
+print(Colorate.Horizontal(Colors.blue_to_purple,f"""
 
 
  ███▄    █  █    ██  ███▄ ▄███▓ ▄▄▄▄   ▓█████  ██▀███      ██▓ ███▄    █   █████▒▒█████  
@@ -21,7 +22,7 @@ print(f"""
                                      ░                                                   
                                      ░  
 
-""")
+"""))
 
 
 def get_phone_info(phone_number):
@@ -53,7 +54,7 @@ def get_phone_info(phone_number):
 
 
 if __name__ == "__main__":
-    phone_number = input("Entrer le numéro de téléphone de votre cible (ex : +33606060606) : ")
+    phone_number = input(Colorate.Horizontal(Colors.blue_to_purple,"Entrer le numéro de téléphone de votre cible (ex : +33606060606) : "))
     info = get_phone_info(phone_number)
 
     if info:
