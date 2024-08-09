@@ -29,7 +29,7 @@ menu = """
         ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩═════════════╩════════╗
         ║   [1] > Tool info                             ║ ║   [10] > Linkvertise bypasser                 ║
         ║   [2] > Ip tools                              ║ ║   [11] > ClarityAI (beta)                     ║
-        ║   [3] > N/A                                   ║ ║   [12] >                                      ║
+        ║   [3] > N/A                                   ║ ║   [12] > Self Security                        ║
         ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
         ║   [5] > Check Phone Number                    ║ ║   [14] >                                      ║
         ║   [6] > PC Info                               ║ ║   [15] >                                      ║
@@ -44,7 +44,7 @@ choice = int(input(Colorate.Horizontal(Colors.blue_to_purple,'Choose >> ')))
 
 def execute_script(choice):
     if choice == 1:
-        os.system('python ./modules/tools_info.py')
+        os.system('python ./modules/tool_info.py')
     elif choice == 2:
         os.system('python ./modules/ip_lookup.py')
     elif choice == 3:

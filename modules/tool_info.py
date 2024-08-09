@@ -6,7 +6,7 @@ version = "1.0"
 
 os.system('cls' if os.name == 'nt' else 'clear')
 class toolinfo:
-    print(f"""
+    print(Colorate.Horizontal(Colors.blue_to_purple,"""
         ▄▄▄█████▓ ▒█████   ▒█████   ██▓        ██▓ ███▄    █   █████▒▒█████  
         ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒       ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
         ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░       ▒██▒▓██  ▀█ ██▒▒████ ░▒██░  ██▒
@@ -16,16 +16,16 @@ class toolinfo:
             ░      ░ ▒ ▒░   ░ ▒ ▒░ ░ ░ ▒  ░    ▒ ░░ ░░   ░ ▒░ ░       ░ ▒ ▒░ 
           ░      ░ ░ ░ ▒  ░ ░ ░ ▒    ░ ░       ▒ ░   ░   ░ ░  ░ ░   ░ ░ ░ ▒  
                      ░ ░      ░ ░      ░  ░    ░           ░            ░ ░  
-                                                                     """)
+                                                                     """))
 
-    print(f"""
+    print(Colorate.Horizontal(Colors.blue_to_purple,"""
 
     Author: {author}     
     Version: {version}
 
 
 [1] Back to main menu
-""")
+"""))
 
     choice = int(input('Choose >> '))
 

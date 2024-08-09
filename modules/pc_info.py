@@ -5,10 +5,11 @@ import subprocess
 import platform
 import os
 
-os.system('color D')
+from pystyle import Colorate, Colors
+
 os.system('cls' if os.name == 'nt' else 'clear')
 
-print(f"""
+print(Colorate.Horizontal(Colors.blue_to_purple,"""
                     ██▓███   ▄████▄      ██▓ ███▄    █   █████▒▒█████  
                     ▓██░  ██▒▒██▀ ▀█     ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
                     ▓██░ ██▓▒▒▓█    ▄    ▒██▒▓██  ▀█ ██▒▒████ ░▒██░  ██▒
@@ -20,11 +21,11 @@ print(f"""
                              ░ ░          ░           ░            ░ ░  
 
 
-""")
+"""))
 
 class PCInfo:
     def __init__(self):
-        self.IP = input("Entrez l'adresse IP de votre cible >>> ")
+        self.IP = input(Colorate.Horizontal(Colors.blue_to_purple,"Entrez l'adresse IP de votre cible >>> "))
         while not self.validate_ip(self.IP):
             print("Adresse IP invalide. Veuillez réessayer.")
             self.IP = input("Entrez l'adresse IP de votre cible : ")

@@ -1,10 +1,12 @@
 import webbrowser
 import os
 
-os.system('cls' if os.name == 'nt' else 'clear')
-os.system("color d")
+from pystyle import Colors, Colorate
 
-print(f"""
+os.system('cls' if os.name == 'nt' else 'clear')
+
+
+print(Colorate.Horizontal(Colors.red_to_blue,"""
  ▒█████    ██████  ██▓ ███▄    █ ▄▄▄█████▓
 ▒██▒  ██▒▒██    ▒ ▓██▒ ██ ▀█   █ ▓  ██▒ ▓▒
 ▒██░  ██▒░ ▓██▄   ▒██▒▓██  ▀█ ██▒▒ ▓██░ ▒░
@@ -15,15 +17,15 @@ print(f"""
 ░ ░ ░ ▒  ░  ░  ░   ▒ ░   ░   ░ ░   ░      
     ░ ░        ░   ░           ░          
                                               
-""")
+"""))
 
 url = "https://osintframework.com/"
 
 webbrowser.open(url)
 
-print(f"""
+print(Colorate.Horizontal(Colors.blue_to_purple, """
 [1] Back to menu
-""")
+"""))
 
 choice = int(input('\033[0;35m Choose >> '))
 
