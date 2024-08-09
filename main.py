@@ -28,8 +28,8 @@ menu = """
                                ║                                                   ║             ║                 
         ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩═════════════╩════════╗
         ║   [1] > Tool info                             ║ ║   [10] > Linkvertise bypasser                 ║
-        ║   [2] > Ip tools                              ║ ║   [11] > ClarityAI (beta)                     ║
-        ║   [3] > N/A                                   ║ ║   [12] > Self Security                        ║
+        ║   [2] > Ip tools                              ║ ║   [11] > ClarityAI (in dev)                   ║
+        ║   [3] > N/A                                   ║ ║   [12] > Self Security (in dev)               ║
         ║   [4] > OSINT Framework (website)             ║ ║   [13] >                                      ║ 
         ║   [5] > Check Phone Number                    ║ ║   [14] >                                      ║
         ║   [6] > PC Info                               ║ ║   [15] >                                      ║
