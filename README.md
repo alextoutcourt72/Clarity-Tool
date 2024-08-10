@@ -20,6 +20,10 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 - [x] Username tracker
 - [ ] doxbin tracker
 - [x] discord server info
+- [ ] Video crasher
+- [ ] discord autologin
+- [ ] self bot
+- [ ] Graber
 
 
 
