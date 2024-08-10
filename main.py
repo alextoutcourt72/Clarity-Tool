@@ -4,6 +4,7 @@ from os import system
 import requests
 from pystyle import Colors, Colorate, Center
 
+
 # repo update checker and install auto
 def update_checker():
     try:
@@ -18,7 +19,7 @@ def update_checker():
             if choice.lower() == "y":
                 os.system("git clone https://github.com/Al3x_UI/clarity-tool.git")
                 os.system("cd clarity-tool")
-                os.system("python setup.py")
+                os.system("setup.bat")
                 os.system("python main.py")
             else:
                 print("Update cancelled.")
@@ -28,8 +29,8 @@ def update_checker():
         print("Failed to check for updates.")
 
 
-title="Clarity tool \ made by alex \ v1.0"
-system("title "+title)
+title = "Clarity tool \ made by alex \ v1.0"
+system("title " + title)
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -66,7 +67,8 @@ menu = """
 """
 print(Colorate.Horizontal(Colors.blue_to_purple, menu))
 
-choice = int(input(Colorate.Horizontal(Colors.blue_to_purple,'Choose >> ')))
+choice = int(input(Colorate.Horizontal(Colors.blue_to_purple, 'Choose >> ')))
+
 
 def execute_script(choice):
     if choice == 1:
@@ -87,5 +89,6 @@ def execute_script(choice):
         os.system('python ./modules/username_tracker.py')
     elif choice == 9:
         os.system('python ./modules/discord_server_info.py')
+
 
 execute_script(choice)
