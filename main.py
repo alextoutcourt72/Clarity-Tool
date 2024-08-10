@@ -1,6 +1,32 @@
 import os
 from os import system
+
+import requests
 from pystyle import Colors, Colorate, Center
+
+# repo update checker and install auto
+def update_checker():
+    try:
+        response = requests.get("https://api.github.com/repos/Alex_UI/clarity-tool/releases/latest")
+        data = response.json()
+        latest_version = data["tag_name"]
+        current_version = open("version.txt", "r").read()
+        if latest_version != current_version:
+            print(f"A new version of Clarity tool is available: {latest_version}")
+            print("Do you want to update now? (y/n)")
+            choice = input()
+            if choice.lower() == "y":
+                os.system("git clone https://github.com/Al3x_UI/clarity-tool.git")
+                os.system("cd clarity-tool")
+                os.system("python setup.py")
+                os.system("python main.py")
+            else:
+                print("Update cancelled.")
+        else:
+            print("You are using the latest version of Clarity tool.")
+    except:
+        print("Failed to check for updates.")
+
 
 title="Clarity tool \ made by alex \ v1.0"
 system("title "+title)
