@@ -69,11 +69,11 @@ def get_phone_info(phone_number):
             "region_code": region_code
         }
     except phonenumbers.NumberParseException:
-        return {"error": "Erreur lors de l'analyse du numéro. Vérifiez le format du numéro."}
+        return {"error": "Erreur lors de l'analyse du numéro."}
     except Exception as e:
         return {"error": f"Une erreur inattendue est survenue : {e}"}
 
-phone_number = input("Entrez un numéro de téléphone (avec l'indicatif pays, ex: +33612345678) : ")
+phone_number = input("Entrez le numéro de téléphone de votre cible (avec l'indicatif pays, ex: +33612345678) : ")
 
 info = get_phone_info(phone_number)
 
