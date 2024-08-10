@@ -4,11 +4,9 @@ from os import system
 import requests
 from pystyle import Colors, Colorate, Center
 
-
-# repo update checker and install auto
 def update_checker():
     try:
-        response = requests.get("https://api.github.com/repos/Alex_UI/clarity-tool/releases/latest")
+        response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
         data = response.json()
         latest_version = data["tag_name"]
         current_version = open("version.txt", "r").read()
@@ -17,7 +15,7 @@ def update_checker():
             print("Do you want to update now? (y/n)")
             choice = input()
             if choice.lower() == "y":
-                os.system("git clone https://github.com/Al3x_UI/clarity-tool.git")
+                os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
                 os.system("cd clarity-tool")
                 os.system("setup.bat")
                 os.system("python main.py")
@@ -27,7 +25,6 @@ def update_checker():
             print("You are using the latest version of Clarity tool.")
     except:
         print("Failed to check for updates.")
-
 
 title = "Clarity tool \ made by alex \ v1.0"
 system("title " + title)
@@ -89,6 +86,5 @@ def execute_script(choice):
         os.system('python ./modules/username_tracker.py')
     elif choice == 9:
         os.system('python ./modules/discord_server_info.py')
-
 
 execute_script(choice)
