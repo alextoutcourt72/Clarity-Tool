@@ -29,16 +29,10 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 
 ## Deployment
 
-To deploy this project run use Python 3.10
+To deploy this project run 
 
 ```bash
-  pip install -r requirements.txt
-```
-
-for run
-
-```bash
-  python main.py
+  run setup.bat
 ```
 ## Important
 Je ne suis pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
