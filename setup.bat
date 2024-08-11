@@ -47,6 +47,9 @@ if %errorlevel% neq 0 (
     exit
 )
 
+:: when python is installed delete the python installation file
+del python-%python_version%-amd64.exe
+
 :: if is not installed, install pip
 powershell -Command "Invoke-WebRequest https://bootstrap.pypa.io/get-pip.py -OutFile get-pip.py"
 python get-pip.py
