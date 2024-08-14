@@ -2,7 +2,6 @@
 # Clarity Tools
 
 Clarity is a multi tool for OSINT ip lookup web poage copier and more
-[!] Clarity Tool n'est pas affilié a Clarity-Corp
 
 [!] Clarity ne vous demendera jamais vos informations perssonels
 
@@ -38,5 +37,9 @@ To deploy this project run
 ## Important
 Je ne suis pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
 
+Clarity Tool n'est pas affilié a Clarity-Corp
+
 ## Copyright
-© "Clarity Tool" is a service and product provided by trademark HEXOFO™ 2024-2034. All rights reserved // www.hexofo.org
+© "Clarity Tool" is a service and product provided by trademark HEXOFO™ 2024-2034. 
+
+All rights reserved // www.hexofo.org
