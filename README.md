@@ -2,6 +2,7 @@
 # Clarity Tools
 
 Clarity is a multi tool for OSINT ip lookup web poage copier and more
+[!] Clarity Tool n'est pas affilié a Clarity-Corp
 
 [!] Clarity ne vous demendera jamais vos informations perssonels
 
