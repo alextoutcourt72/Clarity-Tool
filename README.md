@@ -3,7 +3,7 @@
 
 Clarity is a multi tool for OSINT ip lookup web poage copier and more
 
-[!] Clarity ne vous demandera jamais vos informations perssonels
+[!] Clarity ne vous demandera jamais vos informations personelles
 
 [>] Join Official discord server > https://discord.gg/qFJ7dNZ5Sf
 
@@ -25,8 +25,6 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 - [ ] self bot
 - [ ] Graber
 
-
-
 ## Deployment
 
 To deploy this project run 
@@ -34,6 +32,7 @@ To deploy this project run
 ```bash
   run setup.bat
 ```
+
 ## Important
 Je ne suis pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
 
