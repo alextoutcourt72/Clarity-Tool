@@ -12,7 +12,7 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 - [x] OSINT
 - [x] Discord token info
 - [x] Whois lookup
-- [X] Ip lookup
+- [x] Ip lookup
 - [ ] Ip port scanner
 - [x] Phone number info
 - [ ] Web page copier
@@ -24,7 +24,7 @@ Clarity is a multi tool for OSINT ip lookup web poage copier and more
 - [ ] self bot
 - [ ] Grabber
 - [ ] Cybersecurity
-
+- [ ] 
 ## Deployment
 
 To deploy this project run 
