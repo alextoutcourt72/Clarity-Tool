@@ -38,4 +38,4 @@ To deploy this project run
 Je ne suis pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
 
 ## Copyright
-© HEXOFO™ 2024-2034. All rights reserved // ww.hexofo.org
+© HEXOFO™ 2024-2034. All rights reserved // www.hexofo.org
