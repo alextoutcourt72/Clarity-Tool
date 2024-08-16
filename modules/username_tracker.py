@@ -119,19 +119,28 @@ def check_username(platform, url):
 
 def track_username(username):
     results = {}
+    username_lower = username.lower()
+
     with ThreadPoolExecutor(max_workers=15) as executor:
         future_to_platform = {
-            executor.submit(check_username, platform, url_template.format(username) if "{}" in url_template else url_template.format(username.lower())): platform
+            executor.submit(
+                check_username,
+                platform,
+                url_template.format(username_lower if "{}" in url_template else username)
+            ): platform
             for platform, url_template in platforms.items()
         }
+
         for future in as_completed(future_to_platform):
             platform = future_to_platform[future]
             try:
                 p, url, exists = future.result()
                 if exists:
                     results[p] = url
+            except (ConnectionError, TimeoutError) as e:
+                print(f"Connection error for {platform}: {e}")
             except Exception as e:
-                print(f"Erreur lors de la récupération des résultats pour {platform}: {e}")
+                print(f"Error retrieving results for {platform}: {e}")
 
     return results
 
