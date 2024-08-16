@@ -74,6 +74,8 @@ def end():
 
             execute_script(choice)
 
+import requests
+
 def get_nitro_status(token):
     url = "https://discord.com/api/v9/users/@me/billing/subscriptions"
     headers = {
@@ -83,18 +85,21 @@ def get_nitro_status(token):
 
     response = requests.get(url, headers=headers)
 
-    if response.status_code == 200:
-        subscriptions = response.json()
-        if len(subscriptions) == 0:
-            return "No Nitro subscription"
-        else:
-            for subscription in subscriptions:
-                if subscription['type'] == 1:
-                    return "Nitro Classic"
-                elif subscription['type'] == 2:
-                    return "Nitro"
-    else:
+    if response.status_code != 200:
         return {"error": "Unable to fetch Nitro status", "status_code": response.status_code}
+
+    subscriptions = response.json()
+
+    if not subscriptions:
+        return "No Nitro subscription"
+
+    nitro_types = {1: "Nitro Classic", 2: "Nitro"}
+    for subscription in subscriptions:
+        nitro_status = nitro_types.get(subscription['type'])
+        if nitro_status:
+            return nitro_status
+
+    return "No Nitro subscription"
 
 if __name__ == "__main__":
     main()
