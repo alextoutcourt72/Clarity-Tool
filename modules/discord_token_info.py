@@ -74,8 +74,6 @@ def end():
 
             execute_script(choice)
 
-import requests
-
 def get_nitro_status(token):
     url = "https://discord.com/api/v9/users/@me/billing/subscriptions"
     headers = {
