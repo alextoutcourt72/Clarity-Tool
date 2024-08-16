@@ -30,7 +30,7 @@ def is_registered(domain_name):
         return bool(w.domain_name)
     # iterate over domains
     for domain in domains:
-        print(domain, "is registered" if is_registered(domain) else "is not registered")
+        print(f"{domain} is {'registered' if is_registered(domain) else 'not registered'}")
 
 if is_registered(domain_name):
     whois_info = whois.whois(domain_name)
