@@ -4,7 +4,7 @@
 
 > **Note :** Clarity ne vous demandera jamais vos informations personnelles.
 
-**Rejoignez notre serveur Discord officiel :** [https://discord.gg/qFJ7dNZ5Sf](https://discord.gg/qFJ7dNZ5Sf)
+**Rejoignez notre serveur [Discord Officiel](https://discord.gg/qFJ7dNZ5Sf)
 
 ## Fonctionnalités
 
