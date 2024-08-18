@@ -34,7 +34,7 @@ To deploy this project run
 ```
 
 ## Important
-Je ne suis pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
+clarity n'est pas tenu pour responsable des degats causé a la perssone que vous visez avec cet outils
 
 Clarity Tool n'est pas affilié a Clarity-Corp
 
