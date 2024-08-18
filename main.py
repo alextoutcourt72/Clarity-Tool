@@ -7,24 +7,31 @@ from pystyle import Colors, Colorate, Center
 def update_checker():
     try:
         response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
+        response.raise_for_status()  # Vérifie s'il y a des erreurs dans la requête
         data = response.json()
-        latest_version = data["tag_name"]
-        current_version = open("version.txt", "r").read()
+        latest_version = data.get("tag_name", "unknown")
+
+        with open("version.txt", "r") as version_file:
+            current_version = version_file.read().strip()
+
         if latest_version != current_version:
-            print(f"A new version of Clarity tool is available: {latest_version}")
-            print("Do you want to update now? (y/n)")
-            choice = input()
-            if choice.lower() == "y":
+            print(f"Une nouvelle version de Clarity Tool est disponible : {latest_version}")
+            choice = input("Voulez-vous mettre à jour maintenant ? (y/n) ").lower()
+
+            if choice == "y":
                 os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
-                os.system("cd clarity-tool")
-                os.system("setup.bat")
-                os.system("python main.py")
+                if os.name == 'nt':
+                    os.system("cd clarity-tool && setup.bat && python main.py")
+                else:
+                    os.system("cd clarity-tool && chmod +x setup.sh && ./setup.sh && python3 main.py")
             else:
-                print("Update cancelled.")
+                print("Mise à jour annulée.")
         else:
-            print("You are using the latest version of Clarity tool.")
-    except:
-        print("Failed to check for updates.")
+            print("Vous utilisez déjà la dernière version de Clarity Tool.")
+    except requests.RequestException:
+        print("Échec de la vérification des mises à jour.")
+    except FileNotFoundError:
+        print("Fichier 'version.txt' introuvable.")
 
 title = "Clarity tool \ made by alex \ v1.0"
 system("title " + title)
