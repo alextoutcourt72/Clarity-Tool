@@ -57,7 +57,7 @@ def display_menu():
                 ░                                                ░ ░                                           
 
                                                     Made with <3 By Alex                        
-                                                        version 1.1                 
+                                                        version 1.0                 
                                                               ╦                     
                                                               ║                     
                                                               ║                     
