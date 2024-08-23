@@ -1,6 +1,6 @@
 # 🚀 Clarity Tools
 
-**Clarity Tools** est une bibliautheque d'outil multifonction 🛠️ développé en Python, conçu pour effectuer diverses tâches liées à l'OSINT (Open Source Intelligence), la cybersécurité 🔐, et la gestion d'informations numériques. Que vous ayez besoin de rechercher des informations sur une IP, d'extraire des détails sur un serveur Discord, ou même de copier des pages web, Clarity est là pour vous assister.
+**Clarity Tools** est une bibliothèque d'outil multifonction 🛠️ développé en Python, conçu pour effectuer diverses tâches liées à l'OSINT (Open Source Intelligence), la cybersécurité 🔐, et la gestion d'informations numériques. Que vous ayez besoin de rechercher des informations sur une IP, d'extraire des détails sur un serveur Discord, ou même de copier des pages web, Clarity est là pour vous assister.
 
 > **⚠️ Note :** Il est possible que Clarity ait des fonctionnalités qui ne fonctionnent pas. Ces fonctionnalités seront corrigées lors des prochaines mises à jour..
 
