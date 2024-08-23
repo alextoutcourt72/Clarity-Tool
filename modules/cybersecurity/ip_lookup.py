@@ -177,7 +177,7 @@ who agreed to let clarity use his tool
             blacklist_check(ip_address)
         elif option == "8":
             print(Colorate.Horizontal(Colors.red_to_blue, "Exiting program..."))
-            os.system("python ./main.py")
+            os.system("python ./menu.py")
         else:
             print(Colorate.Horizontal(Colors.red_to_blue, "Invalid option. Please choose a number from 1 to 8."))
 

@@ -1,9 +1,8 @@
-import requests
 import os
 
-os.system("color d")
+import requests
 
-print(f"""
+print("""
  ██▓     ██▓ ███▄    █  ██ ▄█▀██▒   █▓▓█████  ██▀███  ▄▄▄█████▓ ██▓  ██████ ▓█████ 
 ▓██▒    ▓██▒ ██ ▀█   █  ██▄█▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒▓  ██▒ ▓▒▓██▒▒██    ▒ ▓█   ▀ 
 ▒██░    ▒██▒▓██  ▀█ ██▒▓███▄░ ▓██  █▒░▒███   ▓██ ░▄█ ▒▒ ▓██░ ▒░▒██▒░ ▓██▄   ▒███   
@@ -23,7 +22,26 @@ print(f"""
 ▒░▒   ░▓██ ░▒░ ░▒ ░       ▒   ▒▒ ░░ ░▒  ░ ░░ ░▒  ░ ░ ░ ░  ░  ░▒ ░ ▒░               
  ░    ░▒ ▒ ░░  ░░         ░   ▒   ░  ░  ░  ░  ░  ░     ░     ░░   ░                
  ░     ░ ░                    ░  ░      ░        ░     ░  ░   ░                    
-      ░░ ░                                                                         
+      ░░ ░   
+
+[!] Comment l'utiliser ?         
+Il vous suffit d'entrer un lien linkadvertise, et Clarity se charge du reste !
+
 """)
 
+link = input("Entrez le lien à bypasser [>] ")
 
+if link.lower() == "back":
+    os.system("python main.py")
+else:
+    if link:
+        url = f"https://api.bypass.vip/bypass?url={link}"
+
+        response = requests.get(url)
+
+        if response.ok:
+            print(response.text)
+        else:
+            print(f"Erreur lors de la requête : {response.status_code}")
+    else:
+        print("Veuillez entrer un lien valide.")
