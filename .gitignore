@@ -1,4 +1,5 @@
 .idea
 venv
+.venv
 setup.bat
 modules/doxbin_search.py

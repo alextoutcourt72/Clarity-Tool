@@ -1,11 +1,8 @@
-import os
-
+from utils import *
 from pywebcopy import save_website
 
-os.system('cls' if os.name == 'nt' else 'clear')
-os.system("color d")
-
-print(f"""
+clear()
+print_menu("""
  █     █░▓█████  ▄▄▄▄       ██▓███   ▄▄▄        ▄████ ▓█████      ██████  ▄▄▄    ██▒   █▓▓█████  ██▀███  
 ▓█░ █ ░█░▓█   ▀ ▓█████▄    ▓██░  ██▒▒████▄     ██▒ ▀█▒▓█   ▀    ▒██    ▒ ▒████▄ ▓██░   █▒▓█   ▀ ▓██ ▒ ██▒
 ▒█░ █ ░█ ▒███   ▒██▒ ▄██   ▓██░ ██▓▒▒██  ▀█▄  ▒██░▄▄▄░▒███      ░ ▓██▄   ▒██  ▀█▄▓██  █▒░▒███   ▓██ ░▄█ ▒
@@ -18,16 +15,19 @@ print(f"""
                       ░                                                              ░                   
 """)
 
-url = input("Enter the webpage url >> ")
+url = input(purple("Enter the webpage url >> "))
+name = input(purple("Enter the name of the website >> "))
+project_folder = "./savedpages"
 
-
+blue_to_purple(f"Saving {url} to {project_folder} / name : {name}")
 save_website(
     url=url,
     project_folder="./savedpages",
-    project_name="my_site",
+    project_name=name,
     bypass_robots=True,
     debug=True,
     open_in_browser=True,
     delay=None,
     threaded=False,
 )
+back2menu()

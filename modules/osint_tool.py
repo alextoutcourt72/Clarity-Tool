@@ -1,12 +1,8 @@
 import webbrowser
-import os
+from utils import *
 
-from pystyle import Colors, Colorate
-
-os.system('cls' if os.name == 'nt' else 'clear')
-
-
-print(Colorate.Horizontal(Colors.red_to_blue,"""
+clear()
+print_menu("""
  ▒█████    ██████  ██▓ ███▄    █ ▄▄▄█████▓
 ▒██▒  ██▒▒██    ▒ ▓██▒ ██ ▀█   █ ▓  ██▒ ▓▒
 ▒██░  ██▒░ ▓██▄   ▒██▒▓██  ▀█ ██▒▒ ▓██░ ▒░
@@ -17,20 +13,10 @@ print(Colorate.Horizontal(Colors.red_to_blue,"""
 ░ ░ ░ ▒  ░  ░  ░   ▒ ░   ░   ░ ░   ░      
     ░ ░        ░   ░           ░          
                                               
-"""))
+""")
 
 url = "https://osintframework.com/"
 
+blue_to_purple("Opening https://osintframework.com...\n\n")
 webbrowser.open(url)
-
-print(Colorate.Horizontal(Colors.blue_to_purple, """
-[1] Back to menu
-"""))
-
-choice = int(input('\033[0;35m Choose >> '))
-
-def execute_script(choice):
-    if choice == 1:
-        os.system('python main.py')
-
-execute_script(choice)
+back2menu()

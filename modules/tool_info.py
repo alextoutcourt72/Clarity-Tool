@@ -1,12 +1,11 @@
-import os
-from pystyle import Colors, Colorate, Center
+from utils import *
+from utils.get_version import __version__
 
 author = "Alex"
-version = "1.0"
+clear()
 
-os.system('cls' if os.name == 'nt' else 'clear')
-class toolinfo:
-    print(Colorate.Horizontal(Colors.blue_to_purple,"""
+def tool_info():
+    print_menu("""
         ▄▄▄█████▓ ▒█████   ▒█████   ██▓        ██▓ ███▄    █   █████▒▒█████  
         ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒       ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
         ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░       ▒██▒▓██  ▀█ ██▒▒████ ░▒██░  ██▒
@@ -16,24 +15,16 @@ class toolinfo:
             ░      ░ ▒ ▒░   ░ ▒ ▒░ ░ ░ ▒  ░    ▒ ░░ ░░   ░ ▒░ ░       ░ ▒ ▒░ 
           ░      ░ ░ ░ ▒  ░ ░ ░ ▒    ░ ░       ▒ ░   ░   ░ ░  ░ ░   ░ ░ ░ ▒  
                      ░ ░      ░ ░      ░  ░    ░           ░            ░ ░  
-                                                                     """))
+              """)
 
-    print(Colorate.Horizontal(Colors.blue_to_purple,"""
+    print_menu(f"""
 
     Author: {author}     
-    Version: {version}
+    Version: {__version__}
 
+    """)
 
-[1] Back to main menu
-"""))
-
-    choice = int(input('Choose >> '))
-
-    def execute_script(choice):
-        if choice == 1:
-            os.system('python ./main.py')
-
-    execute_script(choice)
+    back2menu()
 
 if __name__ == '__main__':
-    toolinfo()
+    tool_info()

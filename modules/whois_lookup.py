@@ -1,25 +1,6 @@
-import os
+from utils import *
 import whois
 
-os.system('cls' if os.name == 'nt' else 'clear')
-os.system("color d")
-
-print(f"""
- █     █░ ██░ ██  ▒█████   ██▓  ██████     ██▓     ▒█████   ▒█████   ██ ▄█▀ █    ██  ██▓███  
-▓█░ █ ░█░▓██░ ██▒▒██▒  ██▒▓██▒▒██    ▒    ▓██▒    ▒██▒  ██▒▒██▒  ██▒ ██▄█▒  ██  ▓██▒▓██░  ██▒
-▒█░ █ ░█ ▒██▀▀██░▒██░  ██▒▒██▒░ ▓██▄      ▒██░    ▒██░  ██▒▒██░  ██▒▓███▄░ ▓██  ▒██░▓██░ ██▓▒
-░█░ █ ░█ ░▓█ ░██ ▒██   ██░░██░  ▒   ██▒   ▒██░    ▒██   ██░▒██   ██░▓██ █▄ ▓▓█  ░██░▒██▄█▓▒ ▒
-░░██▒██▓ ░▓█▒░██▓░ ████▓▒░░██░▒██████▒▒   ░██████▒░ ████▓▒░░ ████▓▒░▒██▒ █▄▒▒█████▓ ▒██▒ ░  ░
-░ ▓░▒ ▒   ▒ ░░▒░▒░ ▒░▒░▒░ ░▓  ▒ ▒▓▒ ▒ ░   ░ ▒░▓  ░░ ▒░▒░▒░ ░ ▒░▒░▒░ ▒ ▒▒ ▓▒░▒▓▒ ▒ ▒ ▒▓▒░ ░  ░
-  ▒ ░ ░   ▒ ░▒░ ░  ░ ▒ ▒░  ▒ ░░ ░▒  ░ ░   ░ ░ ▒  ░  ░ ▒ ▒░   ░ ▒ ▒░ ░ ░▒ ▒░░░▒░ ░ ░ ░▒ ░     
-  ░   ░   ░  ░░ ░░ ░ ░ ▒   ▒ ░░  ░  ░       ░ ░   ░ ░ ░ ▒  ░ ░ ░ ▒  ░ ░░ ░  ░░░ ░ ░ ░░       
-    ░     ░  ░  ░    ░ ░   ░        ░         ░  ░    ░ ░      ░ ░  ░  ░      ░              
-                                                                                             
-""")
-
-domain = input("Enter a domain name >>> ")
-
-domain_name = domain
 
 def is_registered(domain_name):
     try:
@@ -32,30 +13,52 @@ def is_registered(domain_name):
     for domain in domains:
         print(f"{domain} is {'registered' if is_registered(domain) else 'not registered'}")
 
-if is_registered(domain_name):
-    whois_info = whois.whois(domain_name)
-    # print the registrar
-    print("Domain registrar:", whois_info.registrar)
-    # print the WHOIS server
-    print("WHOIS server:", whois_info.whois_server)
-    # get the creation time
-    print("Domain creation date:", whois_info.creation_date)
-    # get expiration date
-    print("Expiration date:", whois_info.expiration_date)
-    # print all other info
-    print(whois_info)
+def main():
+    clear()
 
-print(f"""
-[1] Back to menu
-[2] Whois lookup
-""")
+    print_menu("""
+     █     █░ ██░ ██  ▒█████   ██▓  ██████     ██▓     ▒█████   ▒█████   ██ ▄█▀ █    ██  ██▓███  
+    ▓█░ █ ░█░▓██░ ██▒▒██▒  ██▒▓██▒▒██    ▒    ▓██▒    ▒██▒  ██▒▒██▒  ██▒ ██▄█▒  ██  ▓██▒▓██░  ██▒
+    ▒█░ █ ░█ ▒██▀▀██░▒██░  ██▒▒██▒░ ▓██▄      ▒██░    ▒██░  ██▒▒██░  ██▒▓███▄░ ▓██  ▒██░▓██░ ██▓▒
+    ░█░ █ ░█ ░▓█ ░██ ▒██   ██░░██░  ▒   ██▒   ▒██░    ▒██   ██░▒██   ██░▓██ █▄ ▓▓█  ░██░▒██▄█▓▒ ▒
+    ░░██▒██▓ ░▓█▒░██▓░ ████▓▒░░██░▒██████▒▒   ░██████▒░ ████▓▒░░ ████▓▒░▒██▒ █▄▒▒█████▓ ▒██▒ ░  ░
+    ░ ▓░▒ ▒   ▒ ░░▒░▒░ ▒░▒░▒░ ░▓  ▒ ▒▓▒ ▒ ░   ░ ▒░▓  ░░ ▒░▒░▒░ ░ ▒░▒░▒░ ▒ ▒▒ ▓▒░▒▓▒ ▒ ▒ ▒▓▒░ ░  ░
+      ▒ ░ ░   ▒ ░▒░ ░  ░ ▒ ▒░  ▒ ░░ ░▒  ░ ░   ░ ░ ▒  ░  ░ ▒ ▒░   ░ ▒ ▒░ ░ ░▒ ▒░░░▒░ ░ ░ ░▒ ░     
+      ░   ░   ░  ░░ ░░ ░ ░ ▒   ▒ ░░  ░  ░       ░ ░   ░ ░ ░ ▒  ░ ░ ░ ▒  ░ ░░ ░  ░░░ ░ ░ ░░       
+        ░     ░  ░  ░    ░ ░   ░        ░         ░  ░    ░ ░      ░ ░  ░  ░      ░              
+                                                                                                 
+    """)
 
-choice = int(input('\033[0;35m Choose >> '))
+    domain = classic_input("Enter a domain name >>> ")
+    domain_name = domain
 
-def execute_script(choice):
+    if is_registered(domain_name):
+        whois_info = whois.whois(domain_name)
+        # print the registrar
+        print("Domain registrar:", whois_info.registrar)
+        # print the WHOIS server
+        print("WHOIS server:", whois_info.whois_server)
+        # get the creation time
+        print("Domain creation date:", whois_info.creation_date)
+        # get expiration date
+        print("Expiration date:", whois_info.expiration_date)
+        # print all other info
+        print(whois_info)
+
+def next():
+    print_menu("""
+    [1] Back to menu
+    [2] Whois lookup
+    """)
+
+    choice = input_number("Choose >> ")
+
     if choice == 1:
-        os.system('python main.py')
+        exec_script("main.py")
     elif choice == 2:
-        os.system('python whois_lookup.py')
+        main()
+        next()
 
-execute_script(choice)
+if __name__ == '__main__':
+    main()
+    next()

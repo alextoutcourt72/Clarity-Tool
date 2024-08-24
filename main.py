@@ -1,7 +1,14 @@
-import os
 import requests
-from pystyle import Colors, Colorate
+from modules.update import update
+from modules.utils import set_signal_handler
+from modules.utils.console_util import *
+from modules.utils.exec_script import *
+from modules.utils.get_version import __version__
+from functools import partial
 
+set_signal_handler()
+
+# [daisseur] Suggestion: https://github.com/Lucksi/Mr.Holmes
 
 def update_checker():
     try:
@@ -18,11 +25,7 @@ def update_checker():
             choice = input("Voulez-vous mettre à jour maintenant ? (y/n) ").lower()
 
             if choice == "y":
-                os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
-                if os.name == 'nt':
-                    os.system("cd clarity-tool && setup.bat && python main.py")
-                else:
-                    os.system("cd clarity-tool && chmod +x setup.sh && ./setup.sh && python3 main.py")
+                update()
             else:
                 print("Mise à jour annulée.")
         else:
@@ -35,16 +38,12 @@ def update_checker():
 
 def display_menu():
 
-    title = "Clarity Tool \ made by Alex \ v1.0"
+    title = f"Clarity Tool \ made by Alex \ v{__version__}"
 
-    if os.name == 'nt':
-        os.system(f"title {title}")
-        os.system('cls')
-    else:
-        os.system(f'echo -n -e "\033]0;{title}\007"')
-        os.system('clear')
+    set_title(title)
+    clear()
 
-    menu = """
+    menu = f"""
                  ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
                 ▒██▀ ▀█  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    
                 ▒▓█    ▄ ▒██░   ▒██  ▀█▄  ▓██ ░▄█ ▒▒██▒▒ ▓██░ ▒░  ▒██ ██░   ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░    
@@ -57,15 +56,15 @@ def display_menu():
                 ░                                                ░ ░                                           
 
                                                     Made with <3 By Alex                        
-                                                        version 1.0                 
+                                                        version {__version__}               
                                                               ╦                     
                                                               ║                     
                                                               ║                     
                                    ╔══════════════════════════╩════════════════════════╗              
                                    ║                                                   ║                             
             ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗
-            ║   [1] > Tool info                             ║ ║   [10] > Cybersecruity                        ║
-            ║   [2] > Ip tools                              ║ ║   [11] >                                      ║
+            ║   [1] > Tool info                             ║ ║   [10] > Whois lookup                         ║
+            ║   [2] > Ip tools                              ║ ║   [11] > Cybersecruity                        ║
             ║   [3] > Linkvertise bypasser                  ║ ║   [12] >                                      ║
             ║   [4] > OSINT Framework (site web)            ║ ║   [13] >                                      ║ 
             ║   [5] > Vérifier numéro de téléphone          ║ ║   [14] >                                      ║
@@ -75,46 +74,48 @@ def display_menu():
             ║   [9] > Infos serveur Discord                 ║ ║   [18] >                                      ║          
             ╚═══════════════════════════════════════════════╝ ╚═══════════════════════════════════════════════╝ 
             
-   tapez "exit" pour quitter
+    tapez "exit" pour quitter
     """
-    print(Colorate.Horizontal(Colors.blue_to_purple, menu))
+    print_menu(menu)
 
 
 def execute_script(choice):
     scripts = {
-        1: 'python ./modules/tool_info.py',
-        2: 'python ./modules/ip_lookup.py',
-        3: 'python ./main.py',
-        4: 'python ./modules/osint_tool.py',
-        5: 'python ./modules/number_info.py',
-        6: 'python ./modules/PC_info.py',
-        7: 'python ./modules/discord_token_info.py',
-        8: 'python ./modules/username_tracker.py',
-        9: 'python ./modules/discord_server_info.py',
-        10: 'python ./modules/cybersecurity/main.py',
+        1: partial(exec_script, './modules/tool_info.py'),
+        2: partial(exec_script, './modules/ip_lookup.py'),
+        3: partial(exec_script, './main.py'),
+        4: partial(exec_script, './modules/osint_tool.py'),
+        5: partial(exec_script, './modules/number_info.py'),
+        6: partial(exec_script, './modules/PC_info.py'),
+        7: partial(exec_script, './modules/discord_token_info.py'),
+        8: partial(exec_script, './modules/username_tracker.py'),
+        9: partial(exec_script, './modules/discord_server_info.py'),
+        10: partial(exec_script, './modules/whois_lookup.py'),
+        11: partial(exec_script, './modules/cybersecurity/main.py'),
     }
 
-    script = scripts.get(choice)
-    if script:
-        if os.name != 'nt' and script.endswith('.py'):
-            script = 'python3 ' + script[7:]
-        os.system(script)
-    else:
-        print("Choix invalide.")
+    try:
+        script = scripts.get(choice)
+        script()
+        sys.exit()
+    except KeyError:
+        entry_error("Choix invalide.")
 
 
 def main():
     update_checker()
-    display_menu()
-
-    try:
-        choice = int(input(Colorate.Horizontal(Colors.blue_to_purple, 'entrée un nombre [>] ')))
-        execute_script(choice)
-        if choice == "exit":
-            exit()
-    except ValueError:
-        print("Entrée invalide. Veuillez entrer un nombre.")
-
+    while True:
+        display_menu()
+        choice = input_number('Entrez un nombre [>] ', exceptions=["exit"])
+        if choice == -1:
+            break
+        elif choice == 0:
+            entry_error("Entrée invalide. Veuillez entrer un nombre.")
+            sleep(2)
+            continue
+        else:
+            execute_script(choice)
+    sys.exit()
 
 if __name__ == "__main__":
     main()

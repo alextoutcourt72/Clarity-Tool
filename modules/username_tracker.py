@@ -1,11 +1,9 @@
-import os
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from utils import *
 
-os.system('color D')
-os.system('cls' if os.name == 'nt' else 'clear')
-
-print(f"""
+clear()
+print_menu("""
  █    ██   ██████ ▓█████  ██▀███   ███▄    █  ▄▄▄       ███▄ ▄███▓▓█████    ▄▄▄█████▓ ██▀███   ▄▄▄       ▄████▄   ██ ▄█▀
  ██  ▓██▒▒██    ▒ ▓█   ▀ ▓██ ▒ ██▒ ██ ▀█   █ ▒████▄    ▓██▒▀█▀ ██▒▓█   ▀    ▓  ██▒ ▓▒▓██ ▒ ██▒▒████▄    ▒██▀ ▀█   ██▄█▒ 
 ▓██  ▒██░░ ▓██▄   ▒███   ▓██ ░▄█ ▒▓██  ▀█ ██▒▒██  ▀█▄  ▓██    ▓██░▒███      ▒ ▓██░ ▒░▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ 
@@ -114,7 +112,7 @@ def check_username(platform, url):
                 return platform, url, False
             return platform, url, True
     except requests.RequestException as e:
-        print(f"Erreur lors de la vérification de {platform}: {e}")
+        entry_error(f"Erreur lors de la vérification de {platform}: {e}")
     return platform, url, username
 
 def track_username(username):
@@ -138,14 +136,14 @@ def track_username(username):
                 if exists:
                     results[p] = url
             except (ConnectionError, TimeoutError) as e:
-                print(f"Connection error for {platform}: {e}")
+                entry_error(f"Connection error for {platform}: {e}")
             except Exception as e:
-                print(f"Error retrieving results for {platform}: {e}")
+                entry_error(f"Error retrieving results for {platform}: {e}")
 
     return results
 
 if __name__ == "__main__":
-    username = input("Entrez le nom d'utilisateur à suivre: ")
+    username = input(purple("Entrez le nom d'utilisateur à suivre: "))
     results = track_username(username)
     if results:
         for platform, url in results.items():
@@ -154,14 +152,5 @@ if __name__ == "__main__":
         print(f"{username} n'est présent sur aucun des sites spécifiés.")
                
 def end():
-            print(f"""
-            [1] back to menu
-            """)
-
-            choice = int(input('\033[0;35m Choose >> '))
-
-            def execute_script(choice):
-                if choice == 1:
-                    os.system('python ./main.py')
-
-            execute_script(choice)
+    input_number("[Enter] Back to main menu  >> ")
+    exec_script("main.py")
