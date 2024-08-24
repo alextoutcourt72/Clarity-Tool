@@ -31,6 +31,19 @@ Pour déployer ce projet, suivez les étapes ci-dessous :
 1. 🖥️ Clonez le dépôt depuis GitHub.
 2. 📦 Installez les dépendances nécessaires en exécutant le script `setup.bat`.
 
+<details>
+<summary><h3>Commandes d'installation</h3></summary>
+  
+  > ```sh
+  > git clone https://github.com/Al3xUI/Clarity-Tool
+  > cd Clarity-Tool
+  > pip3 install requirements.txt
+  > python3 main.py
+  > ```
+
+</details>
+
+
 ## ⚠️ Important
 
 **Clarity** est un outil puissant ⚙️ qui doit être utilisé de manière responsable. L'équipe de développement de Clarity n'est pas responsable des dommages causés par une mauvaise utilisation de cet outil.
