@@ -3,34 +3,34 @@ import phonenumbers
 from phonenumbers import geocoder, carrier, timezone, is_valid_number, number_type
 from pystyle import Colors, Colorate, Center
 
-os.system('color D')
-os.system("cls")
+def exec():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(Colorate.Horizontal(Colors.blue_to_purple,f"""
+                            
 
-print(Colorate.Horizontal(Colors.blue_to_purple,f"""
-                          
+    ███▄    █  █    ██  ███▄ ▄███▓ ▄▄▄▄   ▓█████  ██▀███      ██▓ ███▄    █   █████▒▒█████  
+    ██ ▀█   █  ██  ▓██▒▓██▒▀█▀ ██▒▓█████▄ ▓█   ▀ ▓██ ▒ ██▒   ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
+    ▓██  ▀█ ██▒▓██  ▒██░▓██    ▓██░▒██▒ ▄██▒███   ▓██ ░▄█ ▒   ▒██▒▓██  ▀█ ██▒▒████ ░▒██░  ██▒
+    ▓██▒  ▐▌██▒▓▓█  ░██░▒██    ▒██ ▒██░█▀  ▒▓█  ▄ ▒██▀▀█▄     ░██░▓██▒  ▐▌██▒░▓█▒  ░▒██   ██░
+    ▒██░   ▓██░▒▒█████▓ ▒██▒   ░██▒░▓█  ▀█▓░▒████▒░██▓ ▒██▒   ░██░▒██░   ▓██░░▒█░   ░ ████▓▒░
+    ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░░▒▓███▀▒░░ ▒░ ░░ ▒▓ ░▒▓░   ░▓  ░ ▒░   ▒ ▒  ▒ ░   ░ ▒░▒░▒░ 
+    ░ ░░   ░ ▒░░░▒░ ░ ░ ░  ░      ░▒░▒   ░  ░ ░  ░  ░▒ ░ ▒░    ▒ ░░ ░░   ░ ▒░ ░       ░ ▒ ▒░ 
+    ░   ░ ░  ░░░ ░ ░ ░      ░    ░    ░    ░     ░░   ░     ▒ ░   ░   ░ ░  ░ ░   ░ ░ ░ ▒  
+            ░    ░            ░    ░         ░  ░   ░         ░           ░            ░ ░  
+                                        ░                                                   
+                                        ░  
+                            
+    """))
 
- ███▄    █  █    ██  ███▄ ▄███▓ ▄▄▄▄   ▓█████  ██▀███      ██▓ ███▄    █   █████▒▒█████  
- ██ ▀█   █  ██  ▓██▒▓██▒▀█▀ ██▒▓█████▄ ▓█   ▀ ▓██ ▒ ██▒   ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
-▓██  ▀█ ██▒▓██  ▒██░▓██    ▓██░▒██▒ ▄██▒███   ▓██ ░▄█ ▒   ▒██▒▓██  ▀█ ██▒▒████ ░▒██░  ██▒
-▓██▒  ▐▌██▒▓▓█  ░██░▒██    ▒██ ▒██░█▀  ▒▓█  ▄ ▒██▀▀█▄     ░██░▓██▒  ▐▌██▒░▓█▒  ░▒██   ██░
-▒██░   ▓██░▒▒█████▓ ▒██▒   ░██▒░▓█  ▀█▓░▒████▒░██▓ ▒██▒   ░██░▒██░   ▓██░░▒█░   ░ ████▓▒░
-░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░░▒▓███▀▒░░ ▒░ ░░ ▒▓ ░▒▓░   ░▓  ░ ▒░   ▒ ▒  ▒ ░   ░ ▒░▒░▒░ 
-░ ░░   ░ ▒░░░▒░ ░ ░ ░  ░      ░▒░▒   ░  ░ ░  ░  ░▒ ░ ▒░    ▒ ░░ ░░   ░ ▒░ ░       ░ ▒ ▒░ 
-   ░   ░ ░  ░░░ ░ ░ ░      ░    ░    ░    ░     ░░   ░     ▒ ░   ░   ░ ░  ░ ░   ░ ░ ░ ▒  
-         ░    ░            ░    ░         ░  ░   ░         ░           ░            ░ ░  
-                                     ░                                                   
-                                     ░  
-                          
-"""))
-
-def get_phone_info(phone_number):
+    phone_number = input("Entrez le numéro de téléphone de votre cible (avec l'indicatif pays, ex: +33612345678) : ")
+    
     try:
         parsed_number = phonenumbers.parse(phone_number)
-        
-        valid = is_valid_number(parsed_number)
-        
-        if not valid:
-            return {"error": "Le numéro de téléphone n'est pas valide."}
+        valid = None
+        try:
+            valid = is_valid_number(parsed_number)
+            if not valid: return {"error": "Le numéro de téléphone n'est pas valide."}
+        except phonenumbers.NumberParseException: return {"error": "Erreur lors de l'analyse du numéro."}
 
         location = geocoder.description_for_number(parsed_number, "fr")
         
@@ -58,7 +58,7 @@ def get_phone_info(phone_number):
             phonenumbers.PhoneNumberType.VOICEMAIL: "Messagerie vocale"
         }
 
-        return {
+        info = {
             "valid": valid,
             "location": location,
             "operator": operator,
@@ -68,23 +68,19 @@ def get_phone_info(phone_number):
             "national_number": national_number,
             "region_code": region_code
         }
-    except phonenumbers.NumberParseException:
-        return {"error": "Erreur lors de l'analyse du numéro."}
+    
+        if "error" in info: print(info["error"])
+        else:
+            print(f"Numéro valide : {info['valid']}")
+            print(f"Localisation : {info['location']}")
+            print(f"Opérateur : {info['operator']}")
+            print(f"Type de ligne : {info['line_type']}")
+            print(f"Fuseaux horaires : {', '.join(info['timezones'])}")
+            print(f"Code pays : {info['country_code']}")
+            print(f"Numéro national : {info['national_number']}")
+            print(f"Code régional : {info['region_code']}")
+            input("\n Appuyez sur une touche pour continuer.")
+        return info
     except Exception as e:
         return {"error": f"Une erreur inattendue est survenue : {e}"}
 
-phone_number = input("Entrez le numéro de téléphone de votre cible (avec l'indicatif pays, ex: +33612345678) : ")
-
-info = get_phone_info(phone_number)
-
-if "error" in info:
-    print(info["error"])
-else:
-    print(f"Numéro valide : {info['valid']}")
-    print(f"Localisation : {info['location']}")
-    print(f"Opérateur : {info['operator']}")
-    print(f"Type de ligne : {info['line_type']}")
-    print(f"Fuseaux horaires : {', '.join(info['timezones'])}")
-    print(f"Code pays : {info['country_code']}")
-    print(f"Numéro national : {info['national_number']}")
-    print(f"Code régional : {info['region_code']}")

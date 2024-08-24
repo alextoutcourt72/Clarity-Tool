@@ -4,8 +4,8 @@ from pystyle import Colors, Colorate, Center
 author = "Alex"
 version = "1.0"
 
-os.system('cls' if os.name == 'nt' else 'clear')
-class toolinfo:
+def exec():
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(Colorate.Horizontal(Colors.blue_to_purple,"""
         ▄▄▄█████▓ ▒█████   ▒█████   ██▓        ██▓ ███▄    █   █████▒▒█████  
         ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒       ▓██▒ ██ ▀█   █ ▓██   ▒▒██▒  ██▒
@@ -30,10 +30,5 @@ class toolinfo:
     choice = int(input('Choose >> '))
 
     def execute_script(choice):
-        if choice == 1:
-            os.system('python ./main.py')
-
-    execute_script(choice)
-
-if __name__ == '__main__':
-    toolinfo()
+        if choice != 1: execute_script(choice)
+        else: return exec()
