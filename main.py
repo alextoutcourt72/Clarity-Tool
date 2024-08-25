@@ -2,6 +2,14 @@ import os
 import requests
 from pystyle import Colors, Colorate
 
+from modules import tool_info
+# from modules import ip_lookup
+from modules import osint_tool
+from modules import number_info
+# from modules import PC_info
+# from modules import discord_token_info
+from modules import username_tracker
+# from modules import discord_server_info
 
 def update_checker():
     try:
@@ -18,19 +26,14 @@ def update_checker():
             choice = input("Voulez-vous mettre à jour maintenant ? (y/n) ").lower()
 
             if choice == "y":
-                os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
-                if os.name == 'nt':
-                    os.system("cd clarity-tool && setup.bat && python main.py")
-                else:
-                    os.system("cd clarity-tool && chmod +x setup.sh && ./setup.sh && python3 main.py")
-            else:
-                print("Mise à jour annulée.")
-        else:
-            print("Vous utilisez déjà la dernière version de Clarity Tool.")
-    except requests.RequestException:
-        print("Échec de la vérification des mises à jour.")
-    except FileNotFoundError:
-        print("Fichier 'version.txt' introuvable.")
+                try:
+                    os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
+                    if os.name == 'nt': os.system("cd clarity-tool && setup.bat && python main.py")
+                    else: os.system("cd clarity-tool && chmod +x setup.sh && ./setup.sh && python3 main.py")
+                except requests.RequestException: print("Échec de la vérification des mises à jour.")
+            else: print("Mise à jour annulée.")
+        else: print("Vous utilisez déjà la dernière version de Clarity Tool.")
+    except FileNotFoundError: print("Fichier 'version.txt' introuvable.")
 
 
 def display_menu():
@@ -81,37 +84,30 @@ def display_menu():
 
 
 def execute_script(choice):
-    scripts = {
-        1: 'python ./modules/tool_info.py',
-        2: 'python ./modules/ip_lookup.py',
-        3: 'python ./main.py',
-        4: 'python ./modules/osint_tool.py',
-        5: 'python ./modules/number_info.py',
-        6: 'python ./modules/PC_info.py',
-        7: 'python ./modules/discord_token_info.py',
-        8: 'python ./modules/username_tracker.py',
-        9: 'python ./modules/discord_server_info.py',
-        10: 'python ./modules/cybersecurity/main.py',
-    }
-
-    script = scripts.get(choice)
-    if script:
-        if os.name != 'nt' and script.endswith('.py'):
-            script = 'python3 ' + script[7:]
-        os.system(script)
-    else:
-        print("Choix invalide.")
-
+    os.system('cls' if os.name == 'nt' else 'clear')
+    match choice:
+        case 1: tool_info.exec()
+        case 2: os.system('python3 ./modules/ip_lookup.py')
+        case 3: main()
+        case 4: osint_tool.exec()
+        case 5: number_info.exec()
+        case 6: os.system('python3 ./modules/PC_info.py')
+        case 7: os.system('python3 ./modules/discord_token_info.py')
+        case 8: username_tracker.exec()
+        case 9: os.system('python3 ./modules/discord_server_info.py')
+        case 10: os.system('python3 ./modules/cybersecurity/main.py')
+        case _: print("Choix invalide.")
+    main()
 
 def main():
+    os.system('cls' if os.name == 'nt' else 'clear')
     update_checker()
     display_menu()
 
     try:
-        choice = int(input(Colorate.Horizontal(Colors.blue_to_purple, 'entrée un nombre [>] ')))
-        execute_script(choice)
-        if choice == "exit":
-            exit()
+        choice = int(input(Colorate.Horizontal(Colors.blue_to_purple, 'Entrez un nombre [>] ')))
+        if choice == "exit": exit()
+        else: execute_script(choice)
     except ValueError:
         print("Entrée invalide. Veuillez entrer un nombre.")
 
