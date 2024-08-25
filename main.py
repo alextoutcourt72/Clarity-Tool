@@ -2,16 +2,8 @@ import os
 import requests
 from pystyle import Colors, Colorate
 
-from modules import tool_info
-# from modules import ip_lookup
-from modules import osint_tool
-from modules import number_info
-# from modules import PC_info
-# from modules import discord_token_info
-from modules import username_tracker
-# from modules import discord_server_info
 
-def update_checker():
+"""def update_checker():
     try:
         response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
         response.raise_for_status()
@@ -33,7 +25,7 @@ def update_checker():
                 except requests.RequestException: print("Échec de la vérification des mises à jour.")
             else: print("Mise à jour annulée.")
         else: print("Vous utilisez déjà la dernière version de Clarity Tool.")
-    except FileNotFoundError: print("Fichier 'version.txt' introuvable.")
+    except FileNotFoundError: print("Fichier 'version.txt' introuvable.")"""
 
 
 def display_menu():
@@ -60,22 +52,22 @@ def display_menu():
                 ░                                                ░ ░                                           
 
                                                     Made with <3 By Alex                        
-                                                        version 1.0                 
+                                                        version 0.0.1                 
                                                               ╦                     
                                                               ║                     
                                                               ║                     
                                    ╔══════════════════════════╩════════════════════════╗              
                                    ║                                                   ║                             
             ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗
-            ║   [1] > Tool info                             ║ ║   [10] > Cybersecruity                        ║
-            ║   [2] > Ip tools                              ║ ║   [11] >                                      ║
-            ║   [3] > Linkvertise bypasser                  ║ ║   [12] >                                      ║
-            ║   [4] > OSINT Framework (site web)            ║ ║   [13] >                                      ║ 
-            ║   [5] > Vérifier numéro de téléphone          ║ ║   [14] >                                      ║
-            ║   [6] > Infos PC                              ║ ║   [15] >                                      ║
-            ║   [7] > Infos token Discord                   ║ ║   [16] >                                      ║ 
-            ║   [8] > Tracker de pseudonyme                 ║ ║   [17] >                                      ║ 
-            ║   [9] > Infos serveur Discord                 ║ ║   [18] >                                      ║          
+            ║   [1] >                                       ║ ║   [10] >                                      ║
+            ║   [2] >                                       ║ ║   [11] >                                      ║
+            ║   [3] >                                       ║ ║   [12] >                                      ║
+            ║   [4] >                                       ║ ║   [13] >                                      ║ 
+            ║   [5] >                                       ║ ║   [14] >                                      ║
+            ║   [6] >                                       ║ ║   [15] >                                      ║
+            ║   [7] >                                       ║ ║   [16] >                                      ║ 
+            ║   [8] >                                       ║ ║   [17] >                                      ║ 
+            ║   [9] >                                       ║ ║   [18] >                                      ║          
             ╚═══════════════════════════════════════════════╝ ╚═══════════════════════════════════════════════╝ 
             
    tapez "exit" pour quitter
@@ -87,21 +79,12 @@ def execute_script(choice):
     os.system('cls' if os.name == 'nt' else 'clear')
     match choice:
         case 1: tool_info.exec()
-        case 2: os.system('python3 ./modules/ip_lookup.py')
-        case 3: main()
-        case 4: osint_tool.exec()
-        case 5: number_info.exec()
-        case 6: os.system('python3 ./modules/PC_info.py')
-        case 7: os.system('python3 ./modules/discord_token_info.py')
-        case 8: username_tracker.exec()
-        case 9: os.system('python3 ./modules/discord_server_info.py')
-        case 10: os.system('python3 ./modules/cybersecurity/main.py')
         case _: print("Choix invalide.")
     main()
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
-    update_checker()
+#    update_checker()
     display_menu()
 
     try:
