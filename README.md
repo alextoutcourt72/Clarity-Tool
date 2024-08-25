@@ -1,4 +1,8 @@
 # 🚀 Clarity Tools
+![](https://img.shields.io/github/license/Al3xUI/Clarity-Tool)
+![](https://img.shields.io/badge/Python-3-blue)
+![](https://img.shields.io/github/forks/Al3xUI/Clarity-Tool)
+![](https://img.shields.io/github/stars/Al3xUI/Clarity-Tool)
 
 **Clarity Tools** est une bibliothèque d'outil multifonction 🛠️ développé en Python, conçu pour effectuer diverses tâches liées à l'OSINT (Open Source Intelligence), la cybersécurité 🔐, et la gestion d'informations numériques. Que vous ayez besoin de rechercher des informations sur une IP, d'extraire des détails sur un serveur Discord, ou même de copier des pages web, Clarity est là pour vous assister.
 
