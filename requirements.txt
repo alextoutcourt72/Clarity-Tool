@@ -1,9 +1,5 @@
 requests~=2.32.3
-whois~=1.20240129.2
-pywebcopy~=7.0.2
-uuid~=1.30
 
-phonenumbers~=8.13.42
-geopy~=2.4.1
 pystyle~=2.9
-beautifulsoup4~=4.12.3
+setuptools~=73.0.1
+scapy~=2.5.0

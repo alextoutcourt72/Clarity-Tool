@@ -1,6 +1,11 @@
 import os
-import requests
-from pystyle import Colors, Colorate
+from platform import system
+from time import sleep
+
+from cybersecurity.sql_tool import SqlInjectionTools
+from modules import utils
+from modules.utils import *
+from core import *
 
 
 """def update_checker():
@@ -27,75 +32,52 @@ from pystyle import Colors, Colorate
         else: print("Vous utilisez déjà la dernière version de Clarity Tool.")
     except FileNotFoundError: print("Fichier 'version.txt' introuvable.")"""
 
+# 🚪 <-- We commented the backdoor, see?
+all_tools = [
+    SqlInjectionTools(),
+]
 
-def display_menu():
+class AllTools(ClarityToolsCollection):
+    TITLE = "All tools"
+    TOOLS = all_tools
 
-    title = "Clarity Tool \ made by Alex \ v1.0"
-
-    if os.name == 'nt':
-        os.system(f"title {title}")
-        os.system('cls')
-    else:
-        os.system(f'echo -n -e "\033]0;{title}\007"')
-        os.system('clear')
-
-    menu = """
-                 ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
-                ▒██▀ ▀█  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    
-                ▒▓█    ▄ ▒██░   ▒██  ▀█▄  ▓██ ░▄█ ▒▒██▒▒ ▓██░ ▒░  ▒██ ██░   ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░    
-                ▒▓▓▄ ▄██▒▒██░   ░██▄▄▄▄██ ▒██▀▀█▄  ░██░░ ▓██▓ ░   ░ ▐██▓░   ░ ▓██▓ ░ ▒██   ██░▒██   ██░▒██░    
-                ▒ ▓███▀ ░░██████▒▓█   ▓██▒░██▓ ▒██▒░██░  ▒██▒ ░   ░ ██▒▓░     ▒██▒ ░ ░ ████▓▒░░ ████▓▒░░██████▒
-                ░ ░▒ ▒  ░░ ▒░▓  ░▒▒   ▓▒█░░ ▒▓ ░▒▓░░▓    ▒ ░░      ██▒▒▒      ▒ ░░   ░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░▓  ░
-                  ░  ▒   ░ ░ ▒  ░ ▒   ▒▒ ░  ░▒ ░ ▒░ ▒ ░    ░     ▓██ ░▒░        ░      ░ ▒ ▒░   ░ ▒ ▒░ ░ ░ ▒  ░
-                ░          ░ ░    ░   ▒     ░░   ░  ▒ ░  ░       ▒ ▒ ░░       ░      ░ ░ ░ ▒  ░ ░ ░ ▒    ░ ░   
-                ░ ░          ░  ░     ░  ░   ░      ░            ░ ░                     ░ ░      ░ ░      ░  ░
-                ░                                                ░ ░                                           
-
-                                                    Made with <3 By Alex                        
-                                                        version 0.0.1                 
-                                                              ╦                     
-                                                              ║                     
-                                                              ║                     
-                                   ╔══════════════════════════╩════════════════════════╗              
-                                   ║                                                   ║                             
-            ╔══════════════════════╩════════════════════════╗ ╔════════════════════════╩══════════════════════╗
-            ║   [1] >                                       ║ ║   [10] >                                      ║
-            ║   [2] >                                       ║ ║   [11] >                                      ║
-            ║   [3] >                                       ║ ║   [12] >                                      ║
-            ║   [4] >                                       ║ ║   [13] >                                      ║ 
-            ║   [5] >                                       ║ ║   [14] >                                      ║
-            ║   [6] >                                       ║ ║   [15] >                                      ║
-            ║   [7] >                                       ║ ║   [16] >                                      ║ 
-            ║   [8] >                                       ║ ║   [17] >                                      ║ 
-            ║   [9] >                                       ║ ║   [18] >                                      ║          
-            ╚═══════════════════════════════════════════════╝ ╚═══════════════════════════════════════════════╝ 
-            
-   tapez "exit" pour quitter
-    """
-    print(Colorate.Horizontal(Colors.blue_to_purple, menu))
-
-
-def execute_script(choice):
-    os.system('cls' if os.name == 'nt' else 'clear')
-    match choice:
-        case 1: tool_info.exec()
-        case _: print("Choix invalide.")
-    main()
-
-def main():
-    os.system('cls' if os.name == 'nt' else 'clear')
-#    update_checker()
-    display_menu()
-
-    try:
-        choice = int(input(Colorate.Horizontal(Colors.blue_to_purple, 'Entrez un nombre [>] ')))
-        if choice == "exit": exit()
-        else: execute_script(choice)
-    except ValueError:
-        print("Entrée invalide. Veuillez entrer un nombre.")
-
+    def show_info(self):
+        print(menu())
 
 if __name__ == "__main__":
-    main()
+    try:
+        if system() == 'Windows':
+            fpath = os.path.expanduser("~\\hackingtoolpath.txt")
+            if not os.path.exists(fpath):
+                os.system('cls')
+                # run.menu()
+                print("""
+                        [@] Set Path (All your tools will be installed in that directory)
+                        [1] Manual 
+                        [2] Default
+                """)
+                choice = input("Clarity Tool [>] ").strip()
 
-# 🚪 <-- We commented the backdoor, see?
+                if choice == "1":
+                    inpath = input("Enter Path (with Directory Name) >> ").strip()
+                    with open(fpath, "w") as f:
+                        f.write(inpath)
+                    print("Successfully Set Path to: {}".format(inpath))
+                elif choice == "2":
+                    autopath = "C:\\hackingtool\\"
+                    with open(fpath, "w") as f:
+                        f.write(autopath)
+                    print("Your Default Path Is: {}".format(autopath))
+                    sleep(3)
+                else:
+                    print("Try Again..!!")
+                    sys.exit(0)
+
+            with open(fpath) as f:
+                archive = f.readline().strip()
+                os.makedirs(archive, exist_ok=True)
+                os.chdir(archive)
+                AllTools().show_options()
+    except KeyboardInterrupt:
+        print("\nExiting ..!!!")
+        sleep(2)
