@@ -28,7 +28,7 @@ class XSStrike(ClarityTool):
         "git clone https://github.com/s0md3v/XSStrike.git",
         "cd XSStrike && pip install -r requirements.txt"
     ]
-    RUN_COMMANDS = ["cd XSStrike && python XSStrike.py"]
+    RUN_COMMANDS = ["cd XSStrike && python xsstrike.py"]
     PROJECT_URL = "https://github.com/s0md3v/XSStrike"
 
 

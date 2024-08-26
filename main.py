@@ -1,13 +1,16 @@
 from platform import system
 from time import sleep
 
+from cybersecurity.osint_tools import OSINTTools
+from cybersecurity.pentest_tools import PentestTools
 from cybersecurity.sql_tool import SqlInjectionTools
+from cybersecurity.wordlist_tools import WordlistTools
 from cybersecurity.xss_tools import XssTools
-from modules.utils import *
 from core import *
 from tool_manager import ToolManager
 
-"""def update_checker():
+"""
+def update_checker():
     try:
         response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
         response.raise_for_status()
@@ -29,14 +32,18 @@ from tool_manager import ToolManager
                 except requests.RequestException: print("Échec de la vérification des mises à jour.")
             else: print("Mise à jour annulée.")
         else: print("Vous utilisez déjà la dernière version de Clarity Tool.")
-    except FileNotFoundError: print("Fichier 'version.txt' introuvable.")"""
+    except FileNotFoundError: print("Fichier 'version.txt' introuvable.")
+"""
 
 # 🚪 <-- We commented the backdoor, see?
+
 all_tools = [
-    cyberTools(),
     SqlInjectionTools(),
     XssTools(),
-    ToolManager()
+    ToolManager(),
+    PentestTools(),
+    OSINTTools(),
+    WordlistTools()
 ]
 
 class AllTools(ClarityToolsCollection):

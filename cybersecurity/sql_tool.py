@@ -41,10 +41,6 @@ class SQLiScanner(ClarityTool):
     INSTALL_COMMANDS = ["git clone https://github.com/stamparm/DSSS.git"]
     PROJECT_URL = "https://github.com/stamparm/DSSS"
 
-    def __init__(self):
-        super(SQLiScanner, self).__init__(runnable=False)
-
-
 class Explo(ClarityTool):
     TITLE = "Explo"
     DESCRIPTION = ("Explo is a simple tool to describe web security issues "
@@ -58,9 +54,6 @@ class Explo(ClarityTool):
     ]
     PROJECT_URL = "https://github.com/dtag-dev-sec/explo"
 
-    def __init__(self):
-        super(Explo, self).__init__(runnable=False)
-
 
 class Blisqy(ClarityTool):
     TITLE = "Blisqy - Exploit Time-based blind-SQL injection"
@@ -70,9 +63,6 @@ class Blisqy(ClarityTool):
                    "For Usage >> \n")
     INSTALL_COMMANDS = ["git clone https://github.com/JohnTroony/Blisqy.git"]
     PROJECT_URL = "https://github.com/JohnTroony/Blisqy"
-
-    def __init__(self):
-        super(Blisqy, self).__init__(runnable=False)
 
 
 class Leviathan(ClarityTool):
