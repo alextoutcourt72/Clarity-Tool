@@ -13,7 +13,7 @@
 ## ✨ Fonctionnalités
 
 - [ ] 🔍 **Recherche OSINT complète**
-- [ ] 🔐 **Outils pour les mot de passes**
+- [x] 🔐 **Outils pour les mot de passes**
 - [x] 🔑 **Recherche et exploitation de faille SQL**
 - [ ] 🌐 **Outils pour le web**
 
