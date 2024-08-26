@@ -51,7 +51,8 @@ class AllTools(ClarityToolsCollection):
     TOOLS = all_tools
 
     def show_info(self):
-        print(menu())
+        clear()
+        menu()
 
 if __name__ == "__main__":
     try:

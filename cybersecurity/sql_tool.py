@@ -1,5 +1,5 @@
 # coding=utf-8
-from core import ClarityTool
+from core import ClarityTool, clear
 from core import ClarityToolsCollection
 
 
@@ -95,6 +95,7 @@ class SQLScan(ClarityTool):
 
 class SqlInjectionTools(ClarityToolsCollection):
     TITLE = "SQL Injection Tools"
+    DESCRIPTION = "This is a collection of tools for SQL Injection Attacks"
     TOOLS = [
         Sqlmap(),
         NoSqlMap(),

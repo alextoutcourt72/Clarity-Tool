@@ -5,8 +5,6 @@ import sys
 from traceback import print_exc
 from typing import List, Tuple, Callable
 
-from pystyle import Colorate, Colors
-
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -24,8 +22,9 @@ def menu():
                 ░          ░ ░    ░   ▒     ░░   ░  ▒ ░  ░       ▒ ▒ ░░       ░      ░ ░ ░ ▒  ░ ░ ░ ▒    ░ ░   
                 ░ ░          ░  ░     ░  ░   ░      ░            ░ ░                     ░ ░      ░ ░      ░  ░
                 ░                                                ░ ░                                           
+                
+    v0.0.1
     """)
-
 
 def exec_script(path):
     try:
@@ -45,8 +44,7 @@ def validate_input(ip, val_range):
     return None
 
 class ClarityTool(object):
-    # About the HackingTool
-    TITLE: str = ""  # used to show info in the menu
+    TITLE: str = ""
     DESCRIPTION: str = ""
 
     INSTALL_COMMANDS: List[str] = []
@@ -75,11 +73,12 @@ class ClarityTool(object):
                 "options must be a list of (option_name, option_fn) tuples")
 
     def show_info(self):
+        clear()
         desc = self.DESCRIPTION
         if self.PROJECT_URL:
             desc += '\n\t[*] '
             desc += self.PROJECT_URL
-        os.system(f'echo "{desc}"|boxes -d boy | lolcat')
+        os.system(f'echo {desc}')
 
     def show_options(self, parent = None):
         clear()
@@ -150,7 +149,7 @@ class ClarityTool(object):
     def after_run(self):
         pass
 
-    def is_installed(self, dir_to_check = None):
+    def is_installed(self):
         print("Unimplemented: DO NOT USE")
         return "?"
 
@@ -160,15 +159,15 @@ class ClarityTool(object):
 class ClarityToolsCollection(object):
     TITLE: str = ""  # used to show info in the menu
     DESCRIPTION: str = ""
-    TOOLS = []  # type: List[Any[ClarityTool, ClarityToolsCollection]]
+    TOOLS = []  # type: #List[Any[ClarityTool, ClarityToolsCollection]]
 
     def __init__(self):
         pass
 
     def show_info(self):
-        os.system("figlet -f standard -c {} | lolcat".format(self.TITLE))
-        # os.system(f'echo "{self.DESCRIPTION}"|boxes -d boy | lolcat')
-        # print(self.DESCRIPTION)
+        #os.system("figlet -f standard -c {} | lolcat".format(self.TITLE))
+        os.system(f'echo {self.DESCRIPTION}')
+        #print(self.DESCRIPTION)
 
     def show_options(self, parent = None):
         clear()
