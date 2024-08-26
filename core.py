@@ -85,10 +85,10 @@ class ClarityTool(object):
         clear()
         self.show_info()
         for index, option in enumerate(self.OPTIONS):
-            print(f"[{index + 1}] {option[0]}")
+            print(f"[{index + 1}] > {option[0]}")
         if self.PROJECT_URL:
-            print(f"[{98}] Open project page")
-        print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
+            print(f"[{98}] > Open project page")
+        print(f"[{99}] > Back to {parent.TITLE if parent is not None else 'Exit'}")
         option_index = input("Select an option : ").strip()
         try:
             option_index = int(option_index)
@@ -160,7 +160,7 @@ class ClarityTool(object):
 class ClarityToolsCollection(object):
     TITLE: str = ""  # used to show info in the menu
     DESCRIPTION: str = ""
-    TOOLS = []  # type: List[Any[HackingTool, HackingToolsCollection]]
+    TOOLS = []  # type: List[Any[ClarityTool, ClarityToolsCollection]]
 
     def __init__(self):
         pass
@@ -174,8 +174,8 @@ class ClarityToolsCollection(object):
         clear()
         self.show_info()
         for index, tool in enumerate(self.TOOLS):
-            print(f"[{index} {tool.TITLE}")
-        print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
+            print(f"[{index}] > {tool.TITLE}")
+        print(f"[{99}] > Back to {parent.TITLE if parent is not None else 'Exit'}")
         tool_index = input("Choose a tool to proceed: ").strip()
         try:
             tool_index = int(tool_index)

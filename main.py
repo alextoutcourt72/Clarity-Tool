@@ -1,12 +1,11 @@
-import os
 from platform import system
 from time import sleep
 
 from cybersecurity.sql_tool import SqlInjectionTools
-from modules import utils
+from cybersecurity.xss_tools import XssTools
 from modules.utils import *
 from core import *
-
+from tool_manager import ToolManager
 
 """def update_checker():
     try:
@@ -34,7 +33,10 @@ from core import *
 
 # 🚪 <-- We commented the backdoor, see?
 all_tools = [
+    cyberTools(),
     SqlInjectionTools(),
+    XssTools(),
+    ToolManager()
 ]
 
 class AllTools(ClarityToolsCollection):
@@ -47,7 +49,7 @@ class AllTools(ClarityToolsCollection):
 if __name__ == "__main__":
     try:
         if system() == 'Windows':
-            fpath = os.path.expanduser("~\\hackingtoolpath.txt")
+            fpath = os.path.expanduser("~\\Clarity-Toolpath.txt")
             if not os.path.exists(fpath):
                 os.system('cls')
                 # run.menu()
@@ -64,7 +66,7 @@ if __name__ == "__main__":
                         f.write(inpath)
                     print("Successfully Set Path to: {}".format(inpath))
                 elif choice == "2":
-                    autopath = "C:\\hackingtool\\"
+                    autopath = "C:\\Clarity-Tool\\"
                     with open(fpath, "w") as f:
                         f.write(autopath)
                     print("Your Default Path Is: {}".format(autopath))
