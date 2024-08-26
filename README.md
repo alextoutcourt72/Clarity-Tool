@@ -12,21 +12,10 @@
 
 ## ✨ Fonctionnalités
 
-- [x] 🔍 **Recherche OSINT complète**
-- [x] 🔐 **Extraction d'informations sur les tokens Discord**
-- [x] 🌐 **Recherche WHOIS pour les noms de domaine**
-- [x] 📍 **Recherche et géolocalisation d'IP**
-- [ ] 🔎 **Scanner de ports IP**
-- [x] 📞 **Recherche d'informations sur les numéros de téléphone**
-- [ ] 📝 **Copie de pages web pour archivage**
-- [ ] 🤖 **ClarityAI pour l'analyse automatisée**
-- [x] 👤 **Suivi de noms d'utilisateur à travers plusieurs plateformes**
-- [x] 🛡️ **Extraction d'informations sur les serveurs Discord**
-- [ ] 🎥 **Génération de vidéos destinées à causer des crashes**
-- [ ] 🔑 **Connexion automatique à Discord (autologin)**
-- [ ] 🤖 **Self bot pour Discord**
-- [ ] 🕵️ **Grabber pour capturer des données spécifiques**
-- [ ] 🛡️ **Outils de cybersécurité pour la protection des systèmes**
+- [ ] 🔍 **Recherche OSINT complète**
+- [ ] 🔐 **Outils pour les mot de passes**
+- [x] 🔑 **Recherche et exploitation de faille SQL**
+- [ ] 🌐 **Outils pour le web**
 
 ## 🚀 Déploiement
 
