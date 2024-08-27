@@ -15,7 +15,7 @@
 - [ ] 🔍 **Recherche OSINT complète**
 - [x] 🔐 **Outils pour les mot de passes**
 - [x] 🔑 **Recherche et exploitation de faille SQL**
-- [ ] 🌐 **Outils pour le web**
+- [x] 🌐 **Outils pour le web**
 
 ## 🚀 Déploiement
 
