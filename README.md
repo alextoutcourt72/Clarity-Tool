@@ -29,11 +29,9 @@ Pour déployer ce projet, suivez les étapes ci-dessous :
 1. 🖥️ Clonez le dépôt depuis GitHub.
 2. 📦 Installez les dépendances nécessaires en exécutant le script `setup.bat`.
 
-
+#
 > [!WARNING]
 > **Clarity** est un outil puissant ⚙️ qui doit être utilisé de manière responsable. L'équipe de développement de Clarity n'est pas responsable des dommages causés par une mauvaise utilisation de cet outil.
-
-**Clarity Tool** n'est pas affilié à une "société" non déclaré portant **Clarity** dans son nom.
 
 ## ©️ Droits d'auteur
 
