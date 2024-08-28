@@ -10,7 +10,8 @@ class Sqlmap(ClarityTool):
                    "detecting and exploiting SQL injection flaws and taking "
                    "over of database servers \n "
                    "[!] python sqlmap.py -u [<http://example.com>] --batch --banner \n "
-                   "More Usage [!] https://github.com/sqlmapproject/sqlmap/wiki/Usage")
+                   "More Usage [!] https://github.com/sqlmapproject/sqlmap/wiki/Usage"
+                   "")
     INSTALL_COMMANDS = [
         "git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev"
     ]
@@ -95,7 +96,7 @@ class SQLScan(ClarityTool):
 
 class SqlInjectionTools(ClarityToolsCollection):
     TITLE = "SQL Injection Tools"
-    DESCRIPTION = "This is a collection of tools for SQL Injection Attacks"
+    DESCRIPTION = "This is a collection of tools for SQL Injection Attacks  \n"
     TOOLS = [
         Sqlmap(),
         NoSqlMap(),

@@ -1,12 +1,16 @@
+#############################
+#   Code of Clarity Tool    #
+#   Main dev : Al3xUI       #
+#############################
 from platform import system
 from time import sleep
 
-from cybersecurity.osint_tools import OSINTTools
-from cybersecurity.pentest_tools import PentestTools
-from cybersecurity.sql_tool import SqlInjectionTools
-from cybersecurity.wordlist_tools import WordlistTools
-from cybersecurity.xss_tools import XssTools
+from modules.network_tools import NetTools
+from modules.sql_tool import SqlInjectionTools
+from modules.web_tools import WebTools
+from modules.wordlist_tools import WordlistTools
 from core import *
+from modules.xss_tools import XssTools
 from tool_manager import ToolManager
 
 """
@@ -39,11 +43,11 @@ def update_checker():
 
 all_tools = [
     SqlInjectionTools(),
-    XssTools(),
     ToolManager(),
-    PentestTools(),
-    OSINTTools(),
-    WordlistTools()
+    WordlistTools(),
+    WebTools(),
+    NetTools(),
+    XssTools()
 ]
 
 class AllTools(ClarityToolsCollection):
@@ -57,7 +61,7 @@ class AllTools(ClarityToolsCollection):
 if __name__ == "__main__":
     try:
         if system() == 'Windows':
-            fpath = os.path.expanduser("~\\Clarity-Toolpath.txt")
+            fpath = os.path.expanduser("~\\claritytoolpath.txt")
             if not os.path.exists(fpath):
                 os.system('cls')
                 # run.menu()
@@ -91,3 +95,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\nExiting ..!!!")
         sleep(2)
+
+# Une partie du code vien de HackingTool by Z4nzu
+# Arretez de vous br**ler sur des idée de merde en mode "ya backdoor" lisez ce putain de code et arretez de me faire chier
+# cordialement le dev le plus smart UwU

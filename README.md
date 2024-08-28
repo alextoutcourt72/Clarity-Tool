@@ -26,8 +26,9 @@
 
 Pour déployer ce projet, suivez les étapes ci-dessous :
 
-1. 🖥️ Clonez le dépôt depuis GitHub.
-2. 📦 Installez les dépendances nécessaires en exécutant le script `setup.bat`.
+1. 🐍 verifié que vous avez python3 installé sur votre machine. 
+2. 🖥️ Clonez le dépôt depuis GitHub.
+3. 📦 Installez les dépendances nécessaires en exécutant le script `install.cmd`.
 
 #
 > [!WARNING]

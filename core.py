@@ -11,6 +11,7 @@ def clear():
 
 
 def menu():
+
     print("""
                  ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
                 ▒██▀ ▀█  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    
@@ -24,6 +25,8 @@ def menu():
                 ░                                                ░ ░                                           
                 
     v0.0.1
+    
+    [!] We are still in the process of developing some tools that may not work. 
     """)
 
 def exec_script(path):
@@ -88,7 +91,7 @@ class ClarityTool(object):
         if self.PROJECT_URL:
             print(f"[{98}] > Open project page")
         print(f"[{99}] > Back to {parent.TITLE if parent is not None else 'Exit'}")
-        option_index = input("Select an option : ").strip()
+        option_index = input("Select an option [>] ").strip()
         try:
             option_index = int(option_index)
             if option_index - 1 in range(len(self.OPTIONS)):
