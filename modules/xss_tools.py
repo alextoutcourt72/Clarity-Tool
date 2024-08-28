@@ -23,7 +23,7 @@ class XSStrike(ClarityTool):
         timeout = input("Give me the timeout: ")
         user_agent = input("Give me the user agent: ")
         level = input("Give me the level: ")
-        cmd = f" python3 xsstrike.py -u {target} -t {threadCount}"
+        cmd = f"cd XSStrike && python3 xsstrike.py -u {target} -t {threadCount}"
         if crawl == "yes":
             cmd += " --crawl"
         if cookie:
@@ -31,7 +31,7 @@ class XSStrike(ClarityTool):
         if proxy:
             cmd += f" -p {proxy}"
         if timeout:
-            cmd += f" -T {timeout}"
+            cmd += f" --timeout={timeout}"
         if user_agent:
             cmd += f" -A {user_agent}"
         if level:

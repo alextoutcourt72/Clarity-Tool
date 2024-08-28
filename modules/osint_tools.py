@@ -1,20 +1,25 @@
+import os
+
 from core import ClarityTool, ClarityToolsCollection
 
 
-class SpiderFoot(ClarityTool):
-    TITLE = "SpiderFoot"
-    DESCRIPTION = "SpiderFoot is an open source intelligence automation tool that enables organizations to perform threat intelligence assessments."
-    PROJECT_URL = "https://github.com/smicallef/spiderfoot"
+class holehe(ClarityTool):
+    TITLE = "Holehe"
+    DESCRIPTION = "A Passive DNS / Domain Name System (DNS) reconnaissance tool"
+    PROJECT_URL = "https://github.com/megadose/holehe"
 
     INSTALL_COMMANDS = [
-        "git clone https://github.com/smicallef/spiderfoot.git",
-        "cd spiderfoot",
-        "pip3 install -r requirements.txt",
-        "python3 sf.py"
+        "pip3 install holehe",
     ]
+
+    def run(self):
+        self.before_run()
+        target = input("Give me the target: ")
+        os.system(f"cd holehe && python3 holehe.py -d {target}")
+        self.after_run()
 
 class OSINTTools(ClarityToolsCollection):
     TITLE = "OSINT Tools"
     TOOLS = [
-        SpiderFoot()
+        holehe()
     ]
