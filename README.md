@@ -1,4 +1,4 @@
-<div align=center>
+)<div align=center>
   
 # 🚀 Clarity Tools
 ![](https://img.shields.io/github/license/Al3xUI/Clarity-Tool)
@@ -20,7 +20,7 @@
 - [ ] 🔍 **Recherche OSINT complète**
 - [x] 🔐 **Outils pour les mot de passes**
 - [x] 🔑 **Recherche et exploitation de faille SQL**
-- [x] 🌐 **Outils pour le web**
+- [ ] 🌐 **Outils pour le web**
 
 ## 🚀 Déploiement
 
