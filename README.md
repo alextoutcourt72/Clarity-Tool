@@ -1,4 +1,4 @@
-)<div align=center>
+<div align=center>
   
 # 🚀 Clarity Tools
 ![](https://img.shields.io/github/license/Al3xUI/Clarity-Tool)
