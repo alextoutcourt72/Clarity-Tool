@@ -5,10 +5,7 @@
 from platform import system
 from time import sleep
 
-from modules.network_tools import NetTools
-from modules.osint_tools import OSINTTools
 from modules.sql_tool import SqlInjectionTools
-from modules.web_tools import WebTools
 from modules.wordlist_tools import WordlistTools
 from core import *
 from modules.xss_tools import XssTools
@@ -44,7 +41,6 @@ def update_checker():
 
 all_tools = [
     SqlInjectionTools(),
-    OSINTTools(),
     WordlistTools(),
     XssTools(),
     ToolManager(),
