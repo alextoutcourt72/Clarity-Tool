@@ -11,7 +11,6 @@ from core import *
 from modules.xss_tools import XssTools
 from tool_manager import ToolManager
 
-"""
 def update_checker():
     try:
         response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
@@ -35,7 +34,6 @@ def update_checker():
             else: print("Mise à jour annulée.")
         else: print("Vous utilisez déjà la dernière version de Clarity Tool.")
     except FileNotFoundError: print("Fichier 'version.txt' introuvable.")
-"""
 
 # 🚪 <-- We commented the backdoor, see?
 
