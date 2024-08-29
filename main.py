@@ -14,7 +14,7 @@ from tool_manager import ToolManager
 
 def update_checker():
     try:
-        response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
+        response = requests.get("https://api.github.com/repos/alextoutcourt72/clarity-tool/releases/latest")
         response.raise_for_status()
         data = response.json()
         latest_version = data.get("tag_name", "unknown")
