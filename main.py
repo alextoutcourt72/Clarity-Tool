@@ -4,6 +4,7 @@
 #############################
 from platform import system
 from time import sleep
+import requests
 
 from modules.sql_tool import SqlInjectionTools
 from modules.wordlist_tools import WordlistTools
