@@ -28,7 +28,7 @@ def update_checker():
 
             if choice == "y":
                 try:
-                    os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
+                    os.system("git clone https://github.com/alextoutcourt72/clarity-tool.git")
                     if os.name == 'nt': os.system("cd clarity-tool && setup.bat && python main.py")
                     else: os.system("cd clarity-tool && chmod +x setup.sh && ./setup.sh && python3 main.py")
                 except requests.RequestException: print("Échec de la vérification des mises à jour.")
