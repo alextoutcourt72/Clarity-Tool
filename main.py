@@ -11,6 +11,32 @@ from core import *
 from modules.xss_tools import XssTools
 from tool_manager import ToolManager
 
+"""
+def update_checker():
+    try:
+        response = requests.get("https://api.github.com/repos/Al3xUI/clarity-tool/releases/latest")
+        response.raise_for_status()
+        data = response.json()
+        latest_version = data.get("tag_name", "unknown")
+
+        with open("version.txt", "r") as version_file:
+            current_version = version_file.read().strip()
+
+        if latest_version != current_version:
+            print(f"Une nouvelle version de Clarity Tool est disponible : {latest_version}")
+            choice = input("Voulez-vous mettre à jour maintenant ? (y/n) ").lower()
+
+            if choice == "y":
+                try:
+                    os.system("git clone https://github.com/Al3xUI/clarity-tool.git")
+                    if os.name == 'nt': os.system("cd clarity-tool && setup.bat && python main.py")
+                    else: os.system("cd clarity-tool && chmod +x setup.sh && ./setup.sh && python3 main.py")
+                except requests.RequestException: print("Échec de la vérification des mises à jour.")
+            else: print("Mise à jour annulée.")
+        else: print("Vous utilisez déjà la dernière version de Clarity Tool.")
+    except FileNotFoundError: print("Fichier 'version.txt' introuvable.")
+"""
+
 # 🚪 <-- We commented the backdoor, see?
 
 all_tools = [
