@@ -7,17 +7,19 @@ from time import sleep
 
 from modules.sql_tool import SqlInjectionTools
 from modules.wordlist_tools import WordlistTools
+from modules.gobuster_tool import BruteForceTools
 from core import *
 from modules.xss_tools import XssTools
 from tool_manager import ToolManager
 
-# 🚪 <-- We commented the backdoor, see?
+# 🚪 <-- We commented the backdoor, see? 
 
 all_tools = [
     SqlInjectionTools(),
     WordlistTools(),
     XssTools(),
     ToolManager(),
+    BruteForceTools()
 ]
 
 class AllTools(ClarityToolsCollection):
