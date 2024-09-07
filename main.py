@@ -12,7 +12,7 @@ from core import *
 from modules.xss_tools import XssTools
 from tool_manager import ToolManager
 
-# 🚪 <-- We commented the backdoor, see? 
+#  <-- We commented the backdoor, see?
 
 all_tools = [
     SqlInjectionTools(),
@@ -34,36 +34,42 @@ if __name__ == "__main__":
     try:
         if system() == 'Windows':
             fpath = os.path.expanduser("~\\claritytoolpath.txt")
-            if not os.path.exists(fpath):
-                os.system('cls')
-                # run.menu()
-                print("""
-                        [@] Set Path (All your tools will be installed in that directory)
-                        [1] Manual 
-                        [2] Default
-                """)
-                choice = input("Clarity Tool [>] ").strip()
+        elif system() == 'Linux':
+            fpath = os.path.expanduser("~/.claritytoolpath")
+        else:
+            print("Your Platform is not supported")
+            sys.exit(0)
 
-                if choice == "1":
-                    inpath = input("Enter Path (with Directory Name) >> ").strip()
-                    with open(fpath, "w") as f:
-                        f.write(inpath)
-                    print("Successfully Set Path to: {}".format(inpath))
-                elif choice == "2":
-                    autopath = "C:\\Clarity-Tool\\"
-                    with open(fpath, "w") as f:
-                        f.write(autopath)
-                    print("Your Default Path Is: {}".format(autopath))
-                    sleep(3)
-                else:
-                    print("Try Again..!!")
-                    sys.exit(0)
+        if not os.path.exists(fpath):
+            os.system('cls' if system() == 'Windows' else 'clear')
+            # run.menu()
+            print("""
+                    [@] Set Path (All your tools will be installed in that directory)
+                    [1] Manual 
+                    [2] Default
+            """)
+            choice = input("Clarity Tool [>] ").strip()
 
-            with open(fpath) as f:
-                archive = f.readline().strip()
-                os.makedirs(archive, exist_ok=True)
-                os.chdir(archive)
-                AllTools().show_options()
+            if choice == "1":
+                inpath = input("Enter Path (with Directory Name) >> ").strip()
+                with open(fpath, "w") as f:
+                    f.write(inpath)
+                print("Successfully Set Path to: {}".format(inpath))
+            elif choice == "2":
+                autopath = "C:\\Clarity-Tool\\" if system() == 'Windows' else "~/.clarity-tool/"
+                with open(fpath, "w") as f:
+                    f.write(autopath)
+                print("Your Default Path Is: {}".format(autopath))
+                sleep(3)
+            else:
+                print("Try Again..!!")
+                sys.exit(0)
+
+        with open(fpath) as f:
+            archive = f.readline().strip()
+            os.makedirs(archive, exist_ok=True)
+            os.chdir(archive)
+            AllTools().show_options()
     except KeyboardInterrupt:
         print("\nExiting ..!!!")
         sleep(2)

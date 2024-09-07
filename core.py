@@ -9,10 +9,12 @@ from typing import List, Tuple, Callable
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+with open("version.txt", "r", encoding="utf-8") as f:
+    VERSION = f.readline().strip()
 
 def menu():
 
-    print("""
+    print(f"""
                  ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
                 ▒██▀ ▀█  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    
                 ▒▓█    ▄ ▒██░   ▒██  ▀█▄  ▓██ ░▄█ ▒▒██▒▒ ▓██░ ▒░  ▒██ ██░   ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░    
@@ -24,7 +26,7 @@ def menu():
                 ░ ░          ░  ░     ░  ░   ░      ░            ░ ░                     ░ ░      ░ ░      ░  ░
                 ░                                                ░ ░                                           
                 
-    v0.0.2
+    {VERSION}
     
     [!] We are still in the process of developing some tools that may not work. 
     """)
