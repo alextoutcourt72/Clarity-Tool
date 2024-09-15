@@ -1,3 +1,4 @@
 .idea
 venv
 setup.py
+__pycache__/

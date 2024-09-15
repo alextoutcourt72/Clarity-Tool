@@ -1,5 +1,5 @@
 # coding=utf-8
-from core import ClarityTool, clear
+from core import ClarityTool
 from core import ClarityToolsCollection
 
 
