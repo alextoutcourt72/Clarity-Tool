@@ -8,6 +8,7 @@ from time import sleep
 from modules.sql_tool import SqlInjectionTools
 from modules.wordlist_tools import WordlistTools
 from modules.gobuster_tool import BruteForceTools
+from modules.nmap import NetworkTools
 from core import *
 from modules.xss_tools import XssTools
 from tool_manager import ToolManager
@@ -19,7 +20,8 @@ all_tools = [
     WordlistTools(),
     XssTools(),
     ToolManager(),
-    BruteForceTools()
+    BruteForceTools(),
+    NetworkTools()
 ]
 
 class AllTools(ClarityToolsCollection):
