@@ -15,17 +15,14 @@ with open("version.txt", "r", encoding="utf-8") as f:
 def menu():
 
     print(f"""
-                 ▄████▄   ██▓    ▄▄▄       ██▀███   ██▓▄▄▄█████▓▓██   ██▓   ▄▄▄█████▓ ▒█████   ▒█████   ██▓    
-                ▒██▀ ▀█  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓██▒▓  ██▒ ▓▒ ▒██  ██▒   ▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    
-                ▒▓█    ▄ ▒██░   ▒██  ▀█▄  ▓██ ░▄█ ▒▒██▒▒ ▓██░ ▒░  ▒██ ██░   ▒ ▓██░ ▒░▒██░  ██▒▒██░  ██▒▒██░    
-                ▒▓▓▄ ▄██▒▒██░   ░██▄▄▄▄██ ▒██▀▀█▄  ░██░░ ▓██▓ ░   ░ ▐██▓░   ░ ▓██▓ ░ ▒██   ██░▒██   ██░▒██░    
-                ▒ ▓███▀ ░░██████▒▓█   ▓██▒░██▓ ▒██▒░██░  ▒██▒ ░   ░ ██▒▓░     ▒██▒ ░ ░ ████▓▒░░ ████▓▒░░██████▒
-                ░ ░▒ ▒  ░░ ▒░▓  ░▒▒   ▓▒█░░ ▒▓ ░▒▓░░▓    ▒ ░░      ██▒▒▒      ▒ ░░   ░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░▓  ░
-                  ░  ▒   ░ ░ ▒  ░ ▒   ▒▒ ░  ░▒ ░ ▒░ ▒ ░    ░     ▓██ ░▒░        ░      ░ ▒ ▒░   ░ ▒ ▒░ ░ ░ ▒  ░
-                ░          ░ ░    ░   ▒     ░░   ░  ▒ ░  ░       ▒ ▒ ░░       ░      ░ ░ ░ ▒  ░ ░ ░ ▒    ░ ░   
-                ░ ░          ░  ░     ░  ░   ░      ░            ░ ░                     ░ ░      ░ ░      ░  ░
-                ░                                                ░ ░                                           
-                
+   ____ _            _ _          ____ _     ___ 
+  / ___| | __ _ _ __(_) |_ _   _ / ___| |   |_ _|
+ | |   | |/ _` | '__| | __| | | | |   | |    | | 
+ | |___| | (_| | |  | | |_| |_| | |___| |___ | | 
+  \____|_|\__,_|_|  |_|\__|\__, |\____|_____|___|
+                           |___/      
+                                                                        
+    CLI = Command Line Interface  
     {VERSION}
     
     [!] We are still in the process of developing some tools that may not work. 
@@ -180,7 +177,7 @@ class ClarityToolsCollection(object):
         for index, tool in enumerate(self.TOOLS):
             print(f"[{index}] > {tool.TITLE}")
         print(f"[{99}] > Back to {parent.TITLE if parent is not None else 'Exit'}")
-        tool_index = input("Choose a tool to proceed: ").strip()
+        tool_index = input("Choose a tool to proceed [>] ").strip()
         try:
             tool_index = int(tool_index)
             if tool_index in range(len(self.TOOLS)):

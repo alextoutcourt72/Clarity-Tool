@@ -2,12 +2,12 @@
 #   Code of Clarity Tool    #
 #   Main dev : Al3xUI       #
 #############################
+
 from platform import system
 from time import sleep
 
 from modules.sql_tool import SqlInjectionTools
 from modules.wordlist_tools import WordlistTools
-from modules.gobuster_tool import BruteForceTools
 from core import *
 from modules.xss_tools import XssTools
 from tool_manager import ToolManager
@@ -19,7 +19,6 @@ all_tools = [
     WordlistTools(),
     XssTools(),
     ToolManager(),
-    BruteForceTools()
 ]
 
 class AllTools(ClarityToolsCollection):
