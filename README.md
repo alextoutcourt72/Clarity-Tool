@@ -1,6 +1,6 @@
 <div align=center>
   
-# 🚀 Clarity Tools
+# 🚀 Clarity CLI
 ![](https://img.shields.io/github/license/alextoutcourt72/Clarity-Tool)
 ![](https://img.shields.io/badge/Python-3-blue)
 ![](https://img.shields.io/github/forks/alextoutcourt72/Clarity-Tool)
